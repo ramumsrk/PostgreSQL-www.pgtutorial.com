@@ -1,0 +1,1 @@
+# [PostgreSQL CREATE TABLE: Creating a new Table](https://www.pgtutorial.com/postgresql-tutorial/postgresql-create-table/)

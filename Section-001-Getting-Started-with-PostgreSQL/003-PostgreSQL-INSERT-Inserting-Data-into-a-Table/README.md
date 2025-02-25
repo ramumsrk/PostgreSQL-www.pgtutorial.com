@@ -1,0 +1,1 @@
+# [PostgreSQL INSERT: Inserting Data into a Table](https://www.pgtutorial.com/postgresql-tutorial/postgresql-insert/)

@@ -1,0 +1,1 @@
+# [PostgreSQL SELECT: Querying Data from a Table](https://www.pgtutorial.com/postgresql-tutorial/postgresql-select/)

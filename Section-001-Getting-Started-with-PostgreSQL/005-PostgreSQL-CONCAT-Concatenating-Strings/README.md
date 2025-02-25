@@ -1,0 +1,1 @@
+# [PostgreSQL CONCAT: Concatenating Strings](https://www.pgtutorial.com/postgresql-tutorial/postgresql-concat/)

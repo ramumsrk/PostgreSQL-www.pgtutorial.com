@@ -1,0 +1,1 @@
+# [PostgreSQL DROP TABLE Statement](https://www.pgtutorial.com/postgresql-tutorial/postgresql-drop-table/)
