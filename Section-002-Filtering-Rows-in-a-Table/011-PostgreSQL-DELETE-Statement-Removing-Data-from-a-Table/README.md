@@ -1,0 +1,1 @@
+# [PostgreSQL DELETE Statement: Removing Data from a Table](https://www.pgtutorial.com/postgresql-tutorial/postgresql-delete/)

@@ -1,0 +1,1 @@
+# [PostgreSQL IN: Checking If a Value Matches any Value in a List](https://www.pgtutorial.com/postgresql-tutorial/postgresql-in/)

@@ -1,0 +1,50 @@
+********* QUERY **********
+SELECT
+product_name,
+product_brand,
+product_quantity,
+product_price
+FROM
+inventories
+WHERE
+product_quantity IN (7, 8)
+**************************
+
+ product_name | product_brand | product_quantity | product_price 
+--------------+---------------+------------------+---------------
+ Pixel 7 Pro  | Google        |                8 |        899.99
+ Xperia 1 TV  | Sony          |                7 |       1299.99
+(2 rows)
+
+********* QUERY **********
+SELECT
+*
+FROM
+inventories
+WHERE
+product_quantity BETWEEN 7 AND 8
+**************************
+
+ product_name | product_brand | product_quantity | product_price 
+--------------+---------------+------------------+---------------
+ Pixel 7 Pro  | Google        |                8 |        899.99
+ Xperia 1 TV  | Sony          |                7 |       1299.99
+(2 rows)
+
+********* QUERY **********
+SELECT
+*
+FROM
+inventories
+WHERE
+product_quantity = 7
+OR
+product_quantity = 8
+**************************
+
+ product_name | product_brand | product_quantity | product_price 
+--------------+---------------+------------------+---------------
+ Pixel 7 Pro  | Google        |                8 |        899.99
+ Xperia 1 TV  | Sony          |                7 |       1299.99
+(2 rows)
+

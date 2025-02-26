@@ -1,0 +1,52 @@
+********* QUERY **********
+SELECT
+CURRENT_DATABASE(),
+CURRENT_USER,
+CURRENT_ROLE,
+CURRENT_TIMESTAMP
+**************************
+
+ current_database | current_user | current_role |        current_timestamp         
+------------------+--------------+--------------+----------------------------------
+ pgtutorial       | pgtutorial   | pgtutorial   | 2025-02-26 09:49:23.512107+05:30
+(1 row)
+
+********* QUERY **********
+DELETE FROM inventories
+WHERE product_name = 'iPhone 14 Pro'
+**************************
+
+DELETE 1
+********* QUERY **********
+DELETE FROM inventories
+**************************
+
+DELETE 3
+********* QUERY **********
+INSERT INTO inventories
+(product_name, product_brand, product_quantity, product_price)
+VALUES
+('iPhone 15 Pro', 'Apple', 5, 1299.99)
+RETURNING product_name, product_brand, product_quantity, product_price
+;
+**************************
+
+ product_name  | product_brand | product_quantity | product_price 
+---------------+---------------+------------------+---------------
+ iPhone 15 Pro | Apple         |                5 |       1299.99
+(1 row)
+
+INSERT 0 1
+********* QUERY **********
+DELETE FROM inventories
+WHERE product_name = 'iPhone 15 Pro'
+RETURNING *
+;
+**************************
+
+ product_name  | product_brand | product_quantity | product_price 
+---------------+---------------+------------------+---------------
+ iPhone 15 Pro | Apple         |                5 |       1299.99
+(1 row)
+
+DELETE 1

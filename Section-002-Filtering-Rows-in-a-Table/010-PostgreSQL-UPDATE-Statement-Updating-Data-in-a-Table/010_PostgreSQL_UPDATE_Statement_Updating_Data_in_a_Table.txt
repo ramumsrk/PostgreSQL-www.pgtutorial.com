@@ -1,0 +1,54 @@
+********* QUERY **********
+UPDATE inventories
+SET product_quantity = 30
+WHERE product_name = 'iPhone 14 Pro'
+**************************
+
+UPDATE 1
+********* QUERY **********
+SELECT
+*
+FROM
+inventories
+WHERE product_name = 'iPhone 14 Pro'
+**************************
+
+ product_name  | product_brand | product_quantity | product_price 
+---------------+---------------+------------------+---------------
+ iPhone 14 Pro | Apple         |               30 |        999.99
+(1 row)
+
+********* QUERY **********
+UPDATE inventories
+SET product_price = product_price - (product_price * (10/100))
+**************************
+
+UPDATE 4
+********* QUERY **********
+SELECT
+*
+FROM
+inventories
+**************************
+
+   product_name   | product_brand | product_quantity | product_price 
+------------------+---------------+------------------+---------------
+ Galaxy S23 Ultra | Samsung       |               15 |       1199.99
+ Pixel 7 Pro      | Google        |                8 |        899.99
+ Xperia 1 TV      | Sony          |                7 |       1299.99
+ iPhone 14 Pro    | Apple         |               30 |        999.99
+(4 rows)
+
+********* QUERY **********
+UPDATE inventories
+SET product_price = 750
+WHERE product_name = 'Pixel 7 Pro'
+RETURNING product_name, product_price
+**************************
+
+ product_name | product_price 
+--------------+---------------
+ Pixel 7 Pro  |        750.00
+(1 row)
+
+UPDATE 1

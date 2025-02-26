@@ -1,0 +1,81 @@
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS inventories
+(
+    product_name VARCHAR(255),
+    product_brand VARCHAR(50),
+    product_quantity INTEGER,
+    product_price DECIMAL(19,2)
+);
+**************************
+
+CREATE TABLE
+********* QUERY **********
+SELECT
+product_name,
+product_brand,
+product_quantity,
+product_price
+FROM
+inventories
+**************************
+
+ product_name | product_brand | product_quantity | product_price 
+--------------+---------------+------------------+---------------
+(0 rows)
+
+********* QUERY **********
+INSERT INTO inventories
+(product_name, product_brand, product_quantity, product_price)
+VALUES
+('iPhone 14 Pro', 'Apple', 10, 999.99),
+('Galaxy S23 Ultra', 'Samsung', 15, 1199.99),
+('Pixel 7 Pro', 'Google', 8, 899.99),
+('Xperia 1 TV', 'Sony', 7, 1299.99)
+RETURNING product_name, product_brand, product_quantity, product_price;
+**************************
+
+   product_name   | product_brand | product_quantity | product_price 
+------------------+---------------+------------------+---------------
+ iPhone 14 Pro    | Apple         |               10 |        999.99
+ Galaxy S23 Ultra | Samsung       |               15 |       1199.99
+ Pixel 7 Pro      | Google        |                8 |        899.99
+ Xperia 1 TV      | Sony          |                7 |       1299.99
+(4 rows)
+
+INSERT 0 4
+********* QUERY **********
+SELECT
+product_name,
+product_quantity
+FROM
+inventories
+WHERE
+product_quantity IN (7,8)
+;
+**************************
+
+ product_name | product_quantity 
+--------------+------------------
+ Pixel 7 Pro  |                8
+ Xperia 1 TV  |                7
+(2 rows)
+
+********* QUERY **********
+SELECT
+product_name,
+product_brand,
+product_quantity,
+product_price
+FROM inventories
+WHERE
+product_quantity = 7
+OR
+product_quantity = 8
+**************************
+
+ product_name | product_brand | product_quantity | product_price 
+--------------+---------------+------------------+---------------
+ Pixel 7 Pro  | Google        |                8 |        899.99
+ Xperia 1 TV  | Sony          |                7 |       1299.99
+(2 rows)
+
