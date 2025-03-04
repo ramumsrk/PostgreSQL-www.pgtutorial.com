@@ -1,0 +1,1 @@
+````psql```` is the primary client tool that I have used to complete contents available on [pgtutorial](https://www.pgtutorial.com)
