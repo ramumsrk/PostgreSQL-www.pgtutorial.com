@@ -1,0 +1,65 @@
+Updating and loading repositories:
+ Fedora 41 - x86_64 - Updates           100% |  36.2 KiB/s |   6.2 KiB |  00m00s
+ Fedora 41 - x86_64 - Updates           100% | 614.0 KiB/s |   2.2 MiB |  00m04s
+Repositories loaded.
+Available packages
+postgres-decoderbufs.x86_64            1.9.7-7.Final.fc41 fedora
+postgresql.i686                        16.3-3.fc41        fedora
+postgresql.x86_64                      16.3-3.fc41        fedora
+postgresql-contrib.x86_64              16.3-3.fc41        fedora
+postgresql-docs.x86_64                 16.3-3.fc41        fedora
+postgresql-ip4r.x86_64                 2.4.2-4.fc41       fedora
+postgresql-jdbc.noarch                 42.7.3-2.fc41      fedora
+postgresql-jdbc-javadoc.noarch         42.7.3-2.fc41      fedora
+postgresql-odbc.i686                   16.00.0000-4.fc41  fedora
+postgresql-odbc.x86_64                 16.00.0000-4.fc41  fedora
+postgresql-odbc-tests.x86_64           16.00.0000-4.fc41  fedora
+postgresql-pgpool-II.x86_64            4.5.1-2.fc41       fedora
+postgresql-pgpool-II-devel.x86_64      4.5.1-2.fc41       fedora
+postgresql-pgpool-II-extensions.x86_64 4.5.1-2.fc41       fedora
+postgresql-plperl.x86_64               16.3-3.fc41        fedora
+postgresql-plpython3.x86_64            16.3-3.fc41        fedora
+postgresql-pltcl.x86_64                16.3-3.fc41        fedora
+postgresql-private-devel.i686          16.3-3.fc41        fedora
+postgresql-private-devel.x86_64        16.3-3.fc41        fedora
+postgresql-private-libs.i686           16.3-3.fc41        fedora
+postgresql-private-libs.x86_64         16.3-3.fc41        fedora
+postgresql-server.i686                 16.3-3.fc41        fedora
+postgresql-server.x86_64               16.3-3.fc41        fedora
+postgresql-server-devel.i686           16.3-3.fc41        fedora
+postgresql-server-devel.x86_64         16.3-3.fc41        fedora
+postgresql-static.i686                 16.3-3.fc41        fedora
+postgresql-static.x86_64               16.3-3.fc41        fedora
+postgresql-test.x86_64                 16.3-3.fc41        fedora
+postgresql-test-rpm-macros.noarch      16.3-3.fc41        fedora
+postgresql-upgrade.i686                16.3-3.fc41        fedora
+postgresql-upgrade.x86_64              16.3-3.fc41        fedora
+postgresql-upgrade-devel.i686          16.3-3.fc41        fedora
+postgresql-upgrade-devel.x86_64        16.3-3.fc41        fedora
+postgresql15.i686                      15.8-1.fc41        fedora
+postgresql15.x86_64                    15.8-1.fc41        fedora
+postgresql15-contrib.x86_64            15.8-1.fc41        fedora
+postgresql15-decoderbufs.x86_64        1.9.7-7.Final.fc41 fedora
+postgresql15-docs.x86_64               15.8-1.fc41        fedora
+postgresql15-pg_repack.x86_64          1.4.8-9.fc41       fedora
+postgresql15-pgaudit.x86_64            1.7.0-10.fc41      fedora
+postgresql15-plperl.x86_64             15.8-1.fc41        fedora
+postgresql15-plpython3.x86_64          15.8-1.fc41        fedora
+postgresql15-pltcl.x86_64              15.8-1.fc41        fedora
+postgresql15-private-devel.i686        15.8-1.fc41        fedora
+postgresql15-private-devel.x86_64      15.8-1.fc41        fedora
+postgresql15-private-libs.i686         15.8-1.fc41        fedora
+postgresql15-private-libs.x86_64       15.8-1.fc41        fedora
+postgresql15-server.i686               15.8-1.fc41        fedora
+postgresql15-server.x86_64             15.8-1.fc41        fedora
+postgresql15-server-devel.i686         15.8-1.fc41        fedora
+postgresql15-server-devel.x86_64       15.8-1.fc41        fedora
+postgresql15-static.i686               15.8-1.fc41        fedora
+postgresql15-static.x86_64             15.8-1.fc41        fedora
+postgresql15-test.x86_64               15.8-1.fc41        fedora
+postgresql15-test-rpm-macros.noarch    15.8-1.fc41        fedora
+postgresql15-upgrade.i686              15.8-1.fc41        fedora
+postgresql15-upgrade.x86_64            15.8-1.fc41        fedora
+postgresql15-upgrade-devel.i686        15.8-1.fc41        fedora
+postgresql15-upgrade-devel.x86_64      15.8-1.fc41        fedora
+postgresqltuner.noarch                 1.0.1-13.fc41      fedora

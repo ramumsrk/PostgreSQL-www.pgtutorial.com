@@ -1,0 +1,1057 @@
+Updating and loading repositories:
+Repositories loaded.
+Available packages
+Name           : postgres-decoderbufs
+Epoch          : 0
+Version        : 1.9.7
+Release        : 7.Final.fc41
+Architecture   : x86_64
+Download size  : 23.1 KiB
+Installed size : 39.4 KiB
+Source         : postgresql16-decoderbufs-1.9.7-7.Final.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL Audit Extension
+URL            : https://github.com/debezium/postgres-decoderbufs
+License        : MIT
+Description    : A PostgreSQL logical decoder output plugin to deliver data as Protocol Buffers messages.
+Vendor         : Fedora Project
+
+Name           : postgresql
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : i686
+Download size  : 1.9 MiB
+Installed size : 7.7 MiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL client programs
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : PostgreSQL is an advanced Object-Relational database management system (DBMS).
+               : The base postgresql package contains the client programs that you'll need to
+               : access a PostgreSQL DBMS server, as well as HTML documentation for the whole
+               : system.  These client programs can be located on the same machine as the
+               : PostgreSQL server, or on a remote machine that accesses a PostgreSQL server
+               : over a network connection.  The PostgreSQL server can be found in the
+               : postgresql-server sub-package.
+Vendor         : Fedora Project
+
+Name           : postgresql
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : x86_64
+Download size  : 1.9 MiB
+Installed size : 7.6 MiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL client programs
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : PostgreSQL is an advanced Object-Relational database management system (DBMS).
+               : The base postgresql package contains the client programs that you'll need to
+               : access a PostgreSQL DBMS server, as well as HTML documentation for the whole
+               : system.  These client programs can be located on the same machine as the
+               : PostgreSQL server, or on a remote machine that accesses a PostgreSQL server
+               : over a network connection.  The PostgreSQL server can be found in the
+               : postgresql-server sub-package.
+Vendor         : Fedora Project
+
+Name           : postgresql-contrib
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : x86_64
+Download size  : 1.0 MiB
+Installed size : 3.4 MiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : Extension modules distributed with PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-contrib package contains various extension modules that are
+               : included in the PostgreSQL distribution.
+Vendor         : Fedora Project
+
+Name           : postgresql-docs
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : x86_64
+Download size  : 2.2 MiB
+Installed size : 15.5 MiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : Extra documentation for PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-docs package contains some additional documentation for
+               : PostgreSQL.  Currently, this includes the main documentation in PDF format
+               : and source files for the PostgreSQL tutorial.
+Vendor         : Fedora Project
+
+Name           : postgresql-ip4r
+Epoch          : 0
+Version        : 2.4.2
+Release        : 4.fc41
+Architecture   : x86_64
+Download size  : 78.6 KiB
+Installed size : 249.9 KiB
+Source         : postgresql-ip4r-2.4.2-4.fc41.src.rpm
+Repository     : fedora
+Summary        : IPv4/v6 type and IPv4/v6 range index type for PostgreSQL
+URL            : https://github.com/RhodiumToad/ip4r
+License        : BSD
+Description    : ip4, ip4r, ip6, ip6r, ipaddress and iprange are types that contain a single
+               : IPv4/IPv6 address and a range of IPv4/IPv6 addresses respectively. They can
+               : be used as a more flexible, indexable version of the cidr type.
+Vendor         : Fedora Project
+
+Name           : postgresql-jdbc
+Epoch          : 0
+Version        : 42.7.3
+Release        : 2.fc41
+Architecture   : noarch
+Download size  : 875.8 KiB
+Installed size : 962.6 KiB
+Source         : postgresql-jdbc-42.7.3-2.fc41.src.rpm
+Repository     : fedora
+Summary        : JDBC driver for PostgreSQL
+URL            : http://jdbc.postgresql.org/
+License        : BSD-2-Clause
+Description    : PostgreSQL is an advanced Object-Relational database management
+               : system. The postgresql-jdbc package includes the .jar files needed for
+               : Java programs to access a PostgreSQL database.
+Vendor         : Fedora Project
+
+Name           : postgresql-jdbc-javadoc
+Epoch          : 0
+Version        : 42.7.3
+Release        : 2.fc41
+Architecture   : noarch
+Download size  : 820.8 KiB
+Installed size : 16.2 MiB
+Source         : postgresql-jdbc-42.7.3-2.fc41.src.rpm
+Repository     : fedora
+Summary        : API docs for postgresql-jdbc
+URL            : http://jdbc.postgresql.org/
+License        : BSD-2-Clause
+Description    : This package contains the API Documentation for postgresql-jdbc.
+Vendor         : Fedora Project
+
+Name           : postgresql-odbc
+Epoch          : 0
+Version        : 16.00.0000
+Release        : 4.fc41
+Architecture   : i686
+Download size  : 457.5 KiB
+Installed size : 1.4 MiB
+Source         : postgresql-odbc-16.00.0000-4.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL ODBC driver
+URL            : https://odbc.postgresql.org/
+License        : LGPL-2.0-or-later
+Description    : This package includes the driver needed for applications to access a
+               : PostgreSQL system via ODBC (Open Database Connectivity).
+Vendor         : Fedora Project
+
+Name           : postgresql-odbc
+Epoch          : 0
+Version        : 16.00.0000
+Release        : 4.fc41
+Architecture   : x86_64
+Download size  : 451.7 KiB
+Installed size : 1.3 MiB
+Source         : postgresql-odbc-16.00.0000-4.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL ODBC driver
+URL            : https://odbc.postgresql.org/
+License        : LGPL-2.0-or-later
+Description    : This package includes the driver needed for applications to access a
+               : PostgreSQL system via ODBC (Open Database Connectivity).
+Vendor         : Fedora Project
+
+Name           : postgresql-odbc-tests
+Epoch          : 0
+Version        : 16.00.0000
+Release        : 4.fc41
+Architecture   : x86_64
+Download size  : 118.9 KiB
+Installed size : 730.0 KiB
+Source         : postgresql-odbc-16.00.0000-4.fc41.src.rpm
+Repository     : fedora
+Summary        : Testsuite files for psqlodbc
+URL            : https://odbc.postgresql.org/
+License        : LGPL-2.0-or-later
+Description    : The postgresql-odbc-tests package contains files needed for various tests for
+               : the PostgreSQL unixODBC driver.
+Vendor         : Fedora Project
+
+Name           : postgresql-pgpool-II
+Epoch          : 0
+Version        : 4.5.1
+Release        : 2.fc41
+Architecture   : x86_64
+Download size  : 827.3 KiB
+Installed size : 3.8 MiB
+Source         : postgresql-pgpool-II-4.5.1-2.fc41.src.rpm
+Repository     : fedora
+Summary        : Pgpool is a connection pooling/replication server for PostgreSQL
+URL            : http://pgpool.net
+License        : BSD
+Description    : pgpool-II is a inherited project of pgpool (to classify from
+               : pgpool-II, it is sometimes called as pgpool-I). For those of
+               : you not familiar with pgpool-I, it is a multi-functional
+               : middle ware for PostgreSQL that features connection pooling,
+               : replication and load balancing functions. pgpool-I allows a
+               : user to connect at most two PostgreSQL servers for higher
+               : availability or for higher search performance compared to a
+               : single PostgreSQL server.
+               : 
+               : pgpool-II, on the other hand, allows multiple PostgreSQL
+               : servers (DB nodes) to be connected, which enables queries
+               : to be executed simultaneously on all servers. In other words,
+               : it enables "parallel query" processing. Also, pgpool-II can
+               : be started as pgpool-I by changing configuration parameters.
+               : pgpool-II that is executed in pgpool-I mode enables multiple
+               : DB nodes to be connected, which was not possible in pgpool-I.
+Vendor         : Fedora Project
+
+Name           : postgresql-pgpool-II-devel
+Epoch          : 0
+Version        : 4.5.1
+Release        : 2.fc41
+Architecture   : x86_64
+Download size  : 18.7 KiB
+Installed size : 34.8 KiB
+Source         : postgresql-pgpool-II-4.5.1-2.fc41.src.rpm
+Repository     : fedora
+Summary        : The development files for pgpool-II
+URL            : http://pgpool.net
+License        : BSD
+Description    : Development headers and libraries for pgpool-II.
+Vendor         : Fedora Project
+
+Name           : postgresql-pgpool-II-extensions
+Epoch          : 0
+Version        : 4.5.1
+Release        : 2.fc41
+Architecture   : x86_64
+Download size  : 20.5 KiB
+Installed size : 39.3 KiB
+Source         : postgresql-pgpool-II-4.5.1-2.fc41.src.rpm
+Repository     : fedora
+Summary        : Postgresql extensions for pgpool-II
+URL            : http://pgpool.net
+License        : BSD
+Description    : Postgresql extensions libraries and sql files for pgpool-II.
+Vendor         : Fedora Project
+
+Name           : postgresql-plperl
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : x86_64
+Download size  : 81.0 KiB
+Installed size : 222.8 KiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : The Perl procedural language for PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-plperl package contains the PL/Perl procedural language,
+               : which is an extension to the PostgreSQL database server.
+               : Install this if you want to write database functions in Perl.
+Vendor         : Fedora Project
+
+Name           : postgresql-plpython3
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : x86_64
+Download size  : 96.4 KiB
+Installed size : 343.7 KiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : The Python3 procedural language for PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-plpython3 package contains the PL/Python3 procedural language,
+               : which is an extension to the PostgreSQL database server.
+               : Install this if you want to write database functions in Python 3.
+Vendor         : Fedora Project
+
+Name           : postgresql-pltcl
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : x86_64
+Download size  : 52.1 KiB
+Installed size : 117.1 KiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : The Tcl procedural language for PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-pltcl package contains the PL/Tcl procedural language,
+               : which is an extension to the PostgreSQL database server.
+               : Install this if you want to write database functions in Tcl.
+Vendor         : Fedora Project
+
+Name           : postgresql-private-devel
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : i686
+Download size  : 62.1 KiB
+Installed size : 183.9 KiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL development header files for this build of PostgreSQL server
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-private-devel package contains the header files and libraries
+               : needed to compile C or C++ applications which will directly interact
+               : with a PostgreSQL database management server.
+               : You need to install this package if you want to develop applications which
+               : will interact with a PostgreSQL server.
+Vendor         : Fedora Project
+
+Name           : postgresql-private-devel
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : x86_64
+Download size  : 62.2 KiB
+Installed size : 184.1 KiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL development header files for this build of PostgreSQL server
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-private-devel package contains the header files and libraries
+               : needed to compile C or C++ applications which will directly interact
+               : with a PostgreSQL database management server.
+               : You need to install this package if you want to develop applications which
+               : will interact with a PostgreSQL server.
+Vendor         : Fedora Project
+
+Name           : postgresql-private-libs
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : i686
+Download size  : 150.1 KiB
+Installed size : 347.0 KiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : The shared libraries required only for this build of PostgreSQL server
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-private-libs package provides the shared libraries for this
+               : build of PostgreSQL server and plugins build with this version of server.
+               : For shared libraries used by client packages that need to connect to a
+               : PostgreSQL server, install libpq package instead.
+Vendor         : Fedora Project
+
+Name           : postgresql-private-libs
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : x86_64
+Download size  : 141.7 KiB
+Installed size : 335.6 KiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : The shared libraries required only for this build of PostgreSQL server
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-private-libs package provides the shared libraries for this
+               : build of PostgreSQL server and plugins build with this version of server.
+               : For shared libraries used by client packages that need to connect to a
+               : PostgreSQL server, install libpq package instead.
+Vendor         : Fedora Project
+
+Name           : postgresql-server
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : i686
+Download size  : 7.2 MiB
+Installed size : 30.1 MiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : The programs needed to create and run a PostgreSQL server
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : PostgreSQL is an advanced Object-Relational database management system (DBMS).
+               : The postgresql-server package contains the programs needed to create
+               : and run a PostgreSQL server, which will in turn allow you to create
+               : and maintain PostgreSQL databases.
+Vendor         : Fedora Project
+
+Name           : postgresql-server
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : x86_64
+Download size  : 6.9 MiB
+Installed size : 29.1 MiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : The programs needed to create and run a PostgreSQL server
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : PostgreSQL is an advanced Object-Relational database management system (DBMS).
+               : The postgresql-server package contains the programs needed to create
+               : and run a PostgreSQL server, which will in turn allow you to create
+               : and maintain PostgreSQL databases.
+Vendor         : Fedora Project
+
+Name           : postgresql-server-devel
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : i686
+Download size  : 1.4 MiB
+Installed size : 5.9 MiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL development header files and libraries
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-server-devel package contains the header files and configuration
+               : needed to compile PostgreSQL server extension.
+Vendor         : Fedora Project
+
+Name           : postgresql-server-devel
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : x86_64
+Download size  : 1.4 MiB
+Installed size : 5.9 MiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL development header files and libraries
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-server-devel package contains the header files and configuration
+               : needed to compile PostgreSQL server extension.
+Vendor         : Fedora Project
+
+Name           : postgresql-static
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : i686
+Download size  : 155.4 KiB
+Installed size : 818.8 KiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : Statically linked PostgreSQL libraries
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : Statically linked PostgreSQL libraries that do not have dynamically linked
+               : counterparts.
+Vendor         : Fedora Project
+
+Name           : postgresql-static
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : x86_64
+Download size  : 142.2 KiB
+Installed size : 889.4 KiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : Statically linked PostgreSQL libraries
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : Statically linked PostgreSQL libraries that do not have dynamically linked
+               : counterparts.
+Vendor         : Fedora Project
+
+Name           : postgresql-test
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : x86_64
+Download size  : 1.7 MiB
+Installed size : 14.2 MiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : The test suite distributed with PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-test package contains files needed for various tests for the
+               : PostgreSQL database management system, including regression tests and
+               : benchmarks.
+Vendor         : Fedora Project
+
+Name           : postgresql-test-rpm-macros
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : noarch
+Download size  : 11.6 KiB
+Installed size : 5.0 KiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : Convenience RPM macros for build-time testing against PostgreSQL server
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : This package is meant to be added as BuildRequires: dependency of other packages
+               : that want to run build-time testsuite against running PostgreSQL server.
+Vendor         : Fedora Project
+
+Name           : postgresql-upgrade
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : i686
+Download size  : 7.8 MiB
+Installed size : 32.6 MiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : Support for upgrading from the previous major release of PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-upgrade package contains the pg_upgrade utility and supporting
+               : files needed for upgrading a PostgreSQL database from the previous major
+               : version of PostgreSQL.
+Vendor         : Fedora Project
+
+Name           : postgresql-upgrade
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : x86_64
+Download size  : 7.4 MiB
+Installed size : 31.8 MiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : Support for upgrading from the previous major release of PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-upgrade package contains the pg_upgrade utility and supporting
+               : files needed for upgrading a PostgreSQL database from the previous major
+               : version of PostgreSQL.
+Vendor         : Fedora Project
+
+Name           : postgresql-upgrade-devel
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : i686
+Download size  : 1.3 MiB
+Installed size : 5.7 MiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : Support for build of extensions required for upgrade process
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-devel package contains the header files and libraries
+               : needed to compile C or C++ applications which are necessary in upgrade
+               : process.
+Vendor         : Fedora Project
+
+Name           : postgresql-upgrade-devel
+Epoch          : 0
+Version        : 16.3
+Release        : 3.fc41
+Architecture   : x86_64
+Download size  : 1.3 MiB
+Installed size : 5.7 MiB
+Source         : postgresql16-16.3-3.fc41.src.rpm
+Repository     : fedora
+Summary        : Support for build of extensions required for upgrade process
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-devel package contains the header files and libraries
+               : needed to compile C or C++ applications which are necessary in upgrade
+               : process.
+Vendor         : Fedora Project
+
+Name           : postgresql15
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : i686
+Download size  : 1.7 MiB
+Installed size : 6.6 MiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL client programs
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : PostgreSQL is an advanced Object-Relational database management system (DBMS).
+               : The base postgresql package contains the client programs that you'll need to
+               : access a PostgreSQL DBMS server, as well as HTML documentation for the whole
+               : system.  These client programs can be located on the same machine as the
+               : PostgreSQL server, or on a remote machine that accesses a PostgreSQL server
+               : over a network connection.  The PostgreSQL server can be found in the
+               : postgresql-server sub-package.
+Vendor         : Fedora Project
+
+Name           : postgresql15
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : x86_64
+Download size  : 1.7 MiB
+Installed size : 6.5 MiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL client programs
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : PostgreSQL is an advanced Object-Relational database management system (DBMS).
+               : The base postgresql package contains the client programs that you'll need to
+               : access a PostgreSQL DBMS server, as well as HTML documentation for the whole
+               : system.  These client programs can be located on the same machine as the
+               : PostgreSQL server, or on a remote machine that accesses a PostgreSQL server
+               : over a network connection.  The PostgreSQL server can be found in the
+               : postgresql-server sub-package.
+Vendor         : Fedora Project
+
+Name           : postgresql15-contrib
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : x86_64
+Download size  : 975.8 KiB
+Installed size : 3.4 MiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : Extension modules distributed with PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-contrib package contains various extension modules that are
+               : included in the PostgreSQL distribution.
+Vendor         : Fedora Project
+
+Name           : postgresql15-decoderbufs
+Epoch          : 0
+Version        : 1.9.7
+Release        : 7.Final.fc41
+Architecture   : x86_64
+Download size  : 24.0 KiB
+Installed size : 43.3 KiB
+Source         : postgresql15-decoderbufs-1.9.7-7.Final.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL Protocol Buffers logical decoder plugin
+URL            : https://github.com/debezium/postgres-decoderbufs
+License        : MIT
+Description    : A PostgreSQL logical decoder output plugin to deliver data as Protocol Buffers messages.
+Vendor         : Fedora Project
+
+Name           : postgresql15-docs
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : x86_64
+Download size  : 2.2 MiB
+Installed size : 15.0 MiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : Extra documentation for PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-docs package contains some additional documentation for
+               : PostgreSQL.  Currently, this includes the main documentation in PDF format
+               : and source files for the PostgreSQL tutorial.
+Vendor         : Fedora Project
+
+Name           : postgresql15-pg_repack
+Epoch          : 0
+Version        : 1.4.8
+Release        : 9.fc41
+Architecture   : x86_64
+Download size  : 91.6 KiB
+Installed size : 360.8 KiB
+Source         : postgresql15-pg_repack-1.4.8-9.fc41.src.rpm
+Repository     : fedora
+Summary        : Reorganize tables in PostgreSQL databases without any locks
+URL            : http://reorg.github.io/pg_repack/
+License        : BSD-3-Clause
+Description    : pg_repack is a PostgreSQL extension which lets you remove
+               : bloat from tables and indexes, and optionally
+               : restore the physical order of clustered indexes.
+               : Unlike CLUSTER and VACUUM FULL it works online,
+               : without holding an exclusive lock on the processed tables during processing.
+               : pg_repack is efficient to boot,
+               : with performance comparable to using CLUSTER directly.
+               : 
+               : Please check the documentation (in the doc directory or online)
+               : for installation and usage instructions.
+Vendor         : Fedora Project
+
+Name           : postgresql15-pgaudit
+Epoch          : 0
+Version        : 1.7.0
+Release        : 10.fc41
+Architecture   : x86_64
+Download size  : 28.9 KiB
+Installed size : 54.6 KiB
+Source         : postgresql15-pgaudit-1.7.0-10.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL Audit Extension
+URL            : http://pgaudit.org
+License        : PostgreSQL
+Description    : The PostgreSQL Audit extension (pgaudit) provides detailed session
+               : and/or object audit logging via the standard PostgreSQL logging
+               : facility.
+               : 
+               : The goal of the PostgreSQL Audit extension (pgaudit) is to provide
+               : PostgreSQL users with capability to produce audit logs often required to
+               : comply with government, financial, or ISO certifications.
+               : 
+               : An audit is an official inspection of an individual's or organization's
+               : accounts, typically by an independent body. The information gathered by
+               : the PostgreSQL Audit extension (pgaudit) is properly called an audit
+               : trail or audit log. The term audit log is used in this documentation.
+Vendor         : Fedora Project
+
+Name           : postgresql15-plperl
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : x86_64
+Download size  : 77.7 KiB
+Installed size : 216.8 KiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : The Perl procedural language for PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-plperl package contains the PL/Perl procedural language,
+               : which is an extension to the PostgreSQL database server.
+               : Install this if you want to write database functions in Perl.
+Vendor         : Fedora Project
+
+Name           : postgresql15-plpython3
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : x86_64
+Download size  : 94.5 KiB
+Installed size : 338.6 KiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : The Python3 procedural language for PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-plpython3 package contains the PL/Python3 procedural language,
+               : which is an extension to the PostgreSQL database server.
+               : Install this if you want to write database functions in Python 3.
+Vendor         : Fedora Project
+
+Name           : postgresql15-pltcl
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : x86_64
+Download size  : 50.1 KiB
+Installed size : 114.5 KiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : The Tcl procedural language for PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-pltcl package contains the PL/Tcl procedural language,
+               : which is an extension to the PostgreSQL database server.
+               : Install this if you want to write database functions in Tcl.
+Vendor         : Fedora Project
+
+Name           : postgresql15-private-devel
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : i686
+Download size  : 62.2 KiB
+Installed size : 191.1 KiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL development header files for this build of PostgreSQL server
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-private-devel package contains the header files and libraries
+               : needed to compile C or C++ applications which will directly interact
+               : with a PostgreSQL database management server.
+               : You need to install this package if you want to develop applications which
+               : will interact with a PostgreSQL server.
+Vendor         : Fedora Project
+
+Name           : postgresql15-private-devel
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : x86_64
+Download size  : 62.3 KiB
+Installed size : 191.2 KiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL development header files for this build of PostgreSQL server
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-private-devel package contains the header files and libraries
+               : needed to compile C or C++ applications which will directly interact
+               : with a PostgreSQL database management server.
+               : You need to install this package if you want to develop applications which
+               : will interact with a PostgreSQL server.
+Vendor         : Fedora Project
+
+Name           : postgresql15-private-libs
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : i686
+Download size  : 148.8 KiB
+Installed size : 351.0 KiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : The shared libraries required only for this build of PostgreSQL server
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-private-libs package provides the shared libraries for this
+               : build of PostgreSQL server and plugins build with this version of server.
+               : For shared libraries used by client packages that need to connect to a
+               : PostgreSQL server, install libpq package instead.
+Vendor         : Fedora Project
+
+Name           : postgresql15-private-libs
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : x86_64
+Download size  : 142.9 KiB
+Installed size : 343.6 KiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : The shared libraries required only for this build of PostgreSQL server
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-private-libs package provides the shared libraries for this
+               : build of PostgreSQL server and plugins build with this version of server.
+               : For shared libraries used by client packages that need to connect to a
+               : PostgreSQL server, install libpq package instead.
+Vendor         : Fedora Project
+
+Name           : postgresql15-server
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : i686
+Download size  : 6.6 MiB
+Installed size : 26.5 MiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : The programs needed to create and run a PostgreSQL server
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : PostgreSQL is an advanced Object-Relational database management system (DBMS).
+               : The postgresql-server package contains the programs needed to create
+               : and run a PostgreSQL server, which will in turn allow you to create
+               : and maintain PostgreSQL databases.
+Vendor         : Fedora Project
+
+Name           : postgresql15-server
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : x86_64
+Download size  : 6.2 MiB
+Installed size : 25.6 MiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : The programs needed to create and run a PostgreSQL server
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : PostgreSQL is an advanced Object-Relational database management system (DBMS).
+               : The postgresql-server package contains the programs needed to create
+               : and run a PostgreSQL server, which will in turn allow you to create
+               : and maintain PostgreSQL databases.
+Vendor         : Fedora Project
+
+Name           : postgresql15-server-devel
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : i686
+Download size  : 1.4 MiB
+Installed size : 5.7 MiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL development header files and libraries
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-server-devel package contains the header files and configuration
+               : needed to compile PostgreSQL server extension.
+Vendor         : Fedora Project
+
+Name           : postgresql15-server-devel
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : x86_64
+Download size  : 1.4 MiB
+Installed size : 5.7 MiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : PostgreSQL development header files and libraries
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-server-devel package contains the header files and configuration
+               : needed to compile PostgreSQL server extension.
+Vendor         : Fedora Project
+
+Name           : postgresql15-static
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : i686
+Download size  : 151.8 KiB
+Installed size : 787.5 KiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : Statically linked PostgreSQL libraries
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : Statically linked PostgreSQL libraries that do not have dynamically linked
+               : counterparts.
+Vendor         : Fedora Project
+
+Name           : postgresql15-static
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : x86_64
+Download size  : 138.7 KiB
+Installed size : 857.0 KiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : Statically linked PostgreSQL libraries
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : Statically linked PostgreSQL libraries that do not have dynamically linked
+               : counterparts.
+Vendor         : Fedora Project
+
+Name           : postgresql15-test
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : x86_64
+Download size  : 1.6 MiB
+Installed size : 13.7 MiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : The test suite distributed with PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-test package contains files needed for various tests for the
+               : PostgreSQL database management system, including regression tests and
+               : benchmarks.
+Vendor         : Fedora Project
+
+Name           : postgresql15-test-rpm-macros
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : noarch
+Download size  : 10.6 KiB
+Installed size : 5.0 KiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : Convenience RPM macros for build-time testing against PostgreSQL server
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : This package is meant to be added as BuildRequires: dependency of other packages
+               : that want to run build-time testsuite against running PostgreSQL server.
+Vendor         : Fedora Project
+
+Name           : postgresql15-upgrade
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : i686
+Download size  : 7.4 MiB
+Installed size : 30.3 MiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : Support for upgrading from the previous major release of PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-upgrade package contains the pg_upgrade utility and supporting
+               : files needed for upgrading a PostgreSQL database from the previous major
+               : version of PostgreSQL.
+Vendor         : Fedora Project
+
+Name           : postgresql15-upgrade
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : x86_64
+Download size  : 7.1 MiB
+Installed size : 29.4 MiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : Support for upgrading from the previous major release of PostgreSQL
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-upgrade package contains the pg_upgrade utility and supporting
+               : files needed for upgrading a PostgreSQL database from the previous major
+               : version of PostgreSQL.
+Vendor         : Fedora Project
+
+Name           : postgresql15-upgrade-devel
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : i686
+Download size  : 1.3 MiB
+Installed size : 5.6 MiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : Support for build of extensions required for upgrade process
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-devel package contains the header files and libraries
+               : needed to compile C or C++ applications which are necessary in upgrade
+               : process.
+Vendor         : Fedora Project
+
+Name           : postgresql15-upgrade-devel
+Epoch          : 0
+Version        : 15.8
+Release        : 1.fc41
+Architecture   : x86_64
+Download size  : 1.3 MiB
+Installed size : 5.6 MiB
+Source         : postgresql15-15.8-1.fc41.src.rpm
+Repository     : fedora
+Summary        : Support for build of extensions required for upgrade process
+URL            : http://www.postgresql.org/
+License        : PostgreSQL
+Description    : The postgresql-devel package contains the header files and libraries
+               : needed to compile C or C++ applications which are necessary in upgrade
+               : process.
+Vendor         : Fedora Project
+
+Name           : postgresqltuner
+Epoch          : 0
+Version        : 1.0.1
+Release        : 13.fc41
+Architecture   : noarch
+Download size  : 32.5 KiB
+Installed size : 90.9 KiB
+Source         : postgresqltuner-1.0.1-13.fc41.src.rpm
+Repository     : fedora
+Summary        : Simple script to analyze PostgreSQL database configuration and tuning
+URL            : https://github.com/jfcoz/postgresqltuner/
+License        : GPLv3
+Description    : postgresqltuner is a simple script to analyze your PostgreSQL database. It is
+               : inspired by mysqltuner.pl
+Vendor         : Fedora Project
