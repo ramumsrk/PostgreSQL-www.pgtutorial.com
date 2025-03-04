@@ -1,0 +1,492 @@
+********* QUERY **********
+SELECT
+CURRENT_DATABASE() AS "Currently used database",
+CURRENT_SCHEMA,
+CURRENT_USER,
+CURRENT_ROLE
+**************************
+
+ Currently used database | current_schema | current_user | current_role 
+-------------------------+----------------+--------------+--------------
+ pgtutorial              | pgtutorial     | pgtutorial   | pgtutorial
+(1 row)
+
+********* QUERY **********
+SELECT CURRENT_TIMESTAMP
+**************************
+
+        current_timestamp        
+---------------------------------
+ 2025-03-04 10:29:47.93609+05:30
+(1 row)
+
+            List of relations
+   Schema   |  Name  | Type  |   Owner    
+------------+--------+-------+------------
+ pgtutorial | brands | table | pgtutorial
+(1 row)
+
+********* QUERY **********
+DESCRIBE brands
+**************************
+
+                                 Table "pgtutorial.brands"
+   Column   |          Type          | Collation | Nullable |           Default            
+------------+------------------------+-----------+----------+------------------------------
+ brand_id   | integer                |           | not null | generated always as identity
+ brand_name | character varying(255) |           | not null | 
+Indexes:
+    "brands_pkey" PRIMARY KEY, btree (brand_id)
+    "unique_brand_name" UNIQUE CONSTRAINT, btree (brand_name)
+
+********* QUERY **********
+DROP TABLE IF EXISTS brands
+**************************
+
+DROP TABLE
+                                  Table "public.brands"
+   Column   |         Type          | Collation | Nullable |           Default            
+------------+-----------------------+-----------+----------+------------------------------
+ brand_id   | integer               |           | not null | generated always as identity
+ brand_name | character varying(50) |           |          | 
+Indexes:
+    "brands_pkey" PRIMARY KEY, btree (brand_id)
+
+********* QUERY **********
+DROP TABLE IF EXISTS public.brands
+**************************
+
+DROP TABLE
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS brands
+(
+    brand_id INTEGER GENERATED ALWAYS AS IDENTITY,
+    brand_name VARCHAR(255) NOT NULL,
+    -- Table primary key constraint
+    CONSTRAINT pk_brand_id PRIMARY KEY (brand_id)
+)
+**************************
+
+CREATE TABLE
+                                 Table "pgtutorial.brands"
+   Column   |          Type          | Collation | Nullable |           Default            
+------------+------------------------+-----------+----------+------------------------------
+ brand_id   | integer                |           | not null | generated always as identity
+ brand_name | character varying(255) |           | not null | 
+Indexes:
+    "pk_brand_id" PRIMARY KEY, btree (brand_id)
+
+                                       Table "pgtutorial.products"
+          Column          |          Type          | Collation | Nullable |           Default            
+--------------------------+------------------------+-----------+----------+------------------------------
+ product_id               | integer                |           | not null | generated always as identity
+ product_name             | character varying(255) |           |          | 
+ product_price            | numeric(11,2)          |           | not null | 
+ discounted_product_price | numeric(11,2)          |           | not null | 0
+Indexes:
+    "products_pkey" PRIMARY KEY, btree (product_id)
+Check constraints:
+    "check_product_price_greater_than_or_equal_to_zero" CHECK (product_price >= 0::numeric)
+
+********* QUERY **********
+DROP TABLE IF EXISTS products
+**************************
+
+DROP TABLE
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS products
+(
+    product_id INTEGER GENERATED ALWAYS AS IDENTITY,
+    product_name VARCHAR(100) NOT NULL,
+    product_price DECIMAL(10, 2) NOT NULL,
+    brand_id INT NOT NULL,
+    CONSTRAINT fk_brand_id FOREIGN KEY (brand_id) REFERENCES brands (brand_id)
+)
+**************************
+
+CREATE TABLE
+                                 Table "pgtutorial.products"
+    Column     |          Type          | Collation | Nullable |           Default            
+---------------+------------------------+-----------+----------+------------------------------
+ product_id    | integer                |           | not null | generated always as identity
+ product_name  | character varying(100) |           | not null | 
+ product_price | numeric(10,2)          |           | not null | 
+ brand_id      | integer                |           | not null | 
+Foreign-key constraints:
+    "fk_brand_id" FOREIGN KEY (brand_id) REFERENCES brands(brand_id)
+
+********* QUERY **********
+INSERT INTO brands
+(brand_name)
+VALUES
+('Apple'),
+('Samsung'),
+('Google')
+**************************
+
+INSERT 0 3
+********* QUERY **********
+SELECT
+brand_id,
+brand_name
+FROM
+brands
+**************************
+
+ brand_id | brand_name 
+----------+------------
+        1 | Apple
+        2 | Samsung
+        3 | Google
+(3 rows)
+
+********* QUERY **********
+INSERT INTO products
+(product_name, product_price, brand_id)
+VALUES
+('iPhone 14 Pro', 999.99, 1)
+RETURNING product_id, product_name, product_price, brand_id
+**************************
+
+ product_id | product_name  | product_price | brand_id 
+------------+---------------+---------------+----------
+          1 | iPhone 14 Pro |        999.99 |        1
+(1 row)
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO products
+(product_name, product_price, brand_id)
+VALUES
+('iPhone 15 Pro', 1299.99, 11)
+RETURNING product_id, product_name, product_price, brand_id
+**************************
+
+********* QUERY **********
+DROP TABLE IF EXISTS brands
+**************************
+
+********* QUERY **********
+DROP TABLE IF EXISTS brands CASCADE
+**************************
+
+DROP TABLE
+                                 Table "pgtutorial.products"
+    Column     |          Type          | Collation | Nullable |           Default            
+---------------+------------------------+-----------+----------+------------------------------
+ product_id    | integer                |           | not null | generated always as identity
+ product_name  | character varying(100) |           | not null | 
+ product_price | numeric(10,2)          |           | not null | 
+ brand_id      | integer                |           | not null | 
+
+********* QUERY **********
+DROP TABLE IF EXISTS products
+**************************
+
+DROP TABLE
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS brands
+(
+    brand_id INTEGER GENERATED ALWAYS AS IDENTITY,
+    brand_name VARCHAR(255) NOT NULL,
+    -- Table primary key constraint
+    CONSTRAINT pk_brand_id PRIMARY KEY (brand_id)
+)
+**************************
+
+CREATE TABLE
+                                 Table "pgtutorial.brands"
+   Column   |          Type          | Collation | Nullable |           Default            
+------------+------------------------+-----------+----------+------------------------------
+ brand_id   | integer                |           | not null | generated always as identity
+ brand_name | character varying(255) |           | not null | 
+Indexes:
+    "pk_brand_id" PRIMARY KEY, btree (brand_id)
+
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS products
+(
+    product_id INTEGER GENERATED ALWAYS AS IDENTITY,
+    product_name VARCHAR(255) NOT NULL,
+    product_price DECIMAL(11,2) NOT NULL,
+    brand_id INT,
+    -- Table constraint
+    CONSTRAINT pk_product_id PRIMARY KEY (product_id),
+    CONSTRAINT fk_brand_id FOREIGN KEY brand_id REFERENCES brands (brand_id) ON DELETE SET NULL
+)
+**************************
+
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS products
+(
+    product_id INTEGER GENERATED ALWAYS AS IDENTITY,
+    product_name VARCHAR(255) NOT NULL,
+    product_price DECIMAL(11,2) NOT NULL,
+    brand_id INT,
+    -- Table constraint
+    CONSTRAINT pk_product_id PRIMARY KEY (product_id),
+    CONSTRAINT fk_brand_id FOREIGN KEY (brand_id) REFERENCES brands (brand_id) ON DELETE SET NULL
+)
+**************************
+
+CREATE TABLE
+                                 Table "pgtutorial.products"
+    Column     |          Type          | Collation | Nullable |           Default            
+---------------+------------------------+-----------+----------+------------------------------
+ product_id    | integer                |           | not null | generated always as identity
+ product_name  | character varying(255) |           | not null | 
+ product_price | numeric(11,2)          |           | not null | 
+ brand_id      | integer                |           |          | 
+Indexes:
+    "pk_product_id" PRIMARY KEY, btree (product_id)
+Foreign-key constraints:
+    "fk_brand_id" FOREIGN KEY (brand_id) REFERENCES brands(brand_id) ON DELETE SET NULL
+
+********* QUERY **********
+INSERT INTO brands
+(brand_name)
+VALUES
+('Apple'),
+('Samsung'),
+('Google')
+RETURNING brand_id, brand_name
+**************************
+
+ brand_id | brand_name 
+----------+------------
+        1 | Apple
+        2 | Samsung
+        3 | Google
+(3 rows)
+
+INSERT 0 3
+********* QUERY **********
+INSERT INTO products
+(product_name, product_price, brand_id)
+VALUES
+('iPhone 14 Pro', 999.99, 1),
+('iPhone 15 Pro', 1299.99, 1),
+('Galaxy S23 Ultra', 1299.99, 2)
+**************************
+
+INSERT 0 3
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price,
+brand_id
+FROM
+products
+**************************
+
+ product_id |   product_name   | product_price | brand_id 
+------------+------------------+---------------+----------
+          1 | iPhone 14 Pro    |        999.99 |        1
+          2 | iPhone 15 Pro    |       1299.99 |        1
+          3 | Galaxy S23 Ultra |       1299.99 |        2
+(3 rows)
+
+********* QUERY **********
+DELETE FROM brands WHERE brand_id = 1 RETURNING brand_id, brand_name
+**************************
+
+ brand_id | brand_name 
+----------+------------
+        1 | Apple
+(1 row)
+
+DELETE 1
+********* QUERY **********
+SELECT  -- Projection
+        product_id,
+        product_name,
+        product_price,
+        brand_id
+  FROM  products
+**************************
+
+ product_id |   product_name   | product_price | brand_id 
+------------+------------------+---------------+----------
+          3 | Galaxy S23 Ultra |       1299.99 |        2
+          1 | iPhone 14 Pro    |        999.99 |         
+          2 | iPhone 15 Pro    |       1299.99 |         
+(3 rows)
+
+********* QUERY **********
+DROP TABLE IF EXISTS brands, products
+**************************
+
+DROP TABLE
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS brands
+(
+    brand_id INTEGER GENERATED ALWAYS AS IDENTITY,
+    brand_name VARCHAR(255) NOT NULL,
+    -- Table primary key constraint
+    CONSTRAINT pk_brand_id PRIMARY KEY (brand_id)
+)
+**************************
+
+CREATE TABLE
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS products
+(
+    product_id INTEGER GENERATED ALWAYS AS IDENTITY,
+    product_name VARCHAR(255) NOT NULL,
+    product_price DECIMAL(11,2) NOT NULL,
+    brand_id INT,
+    -- Table constraint
+    CONSTRAINT pk_product_id PRIMARY KEY (product_id),
+    CONSTRAINT fk_brand_id FOREIGN KEY (brand_id) REFERENCES brands (brand_id) ON DELETE CASCADE
+)
+**************************
+
+CREATE TABLE
+********* QUERY **********
+INSERT INTO brands
+(brand_name)
+VALUES
+('Apple'),
+('Samsung'),
+('Google')
+RETURNING brand_id, brand_name
+**************************
+
+ brand_id | brand_name 
+----------+------------
+        1 | Apple
+        2 | Samsung
+        3 | Google
+(3 rows)
+
+INSERT 0 3
+********* QUERY **********
+INSERT INTO products
+(product_name, product_price, brand_id)
+VALUES
+('iPhone 14 Pro', 999.99, 1),
+('iPhone 15 Pro', 1299.99, 1),
+('Galaxy S23 Ultra', 1299.99, 2)
+RETURNING product_id, product_name, product_price, brand_id
+**************************
+
+ product_id |   product_name   | product_price | brand_id 
+------------+------------------+---------------+----------
+          1 | iPhone 14 Pro    |        999.99 |        1
+          2 | iPhone 15 Pro    |       1299.99 |        1
+          3 | Galaxy S23 Ultra |       1299.99 |        2
+(3 rows)
+
+INSERT 0 3
+********* QUERY **********
+DELETE FROM brands WHERE brand_id = 1 RETURNING brand_id, brand_name
+**************************
+
+ brand_id | brand_name 
+----------+------------
+        1 | Apple
+(1 row)
+
+DELETE 1
+********* QUERY **********
+SELECT  -- Projection
+        product_id,
+        product_name,
+        product_price,
+        brand_id
+  FROM  products
+**************************
+
+ product_id |   product_name   | product_price | brand_id 
+------------+------------------+---------------+----------
+          3 | Galaxy S23 Ultra |       1299.99 |        2
+(1 row)
+
+********* QUERY **********
+DROP TABLE IF EXISTS brands, products
+**************************
+
+DROP TABLE
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS brands
+(
+    brand_id INTEGER GENERATED ALWAYS AS IDENTITY,
+    brand_name VARCHAR(255) NOT NULL,
+    -- Table primary key constraint
+    CONSTRAINT pk_brand_id PRIMARY KEY (brand_id)
+)
+**************************
+
+CREATE TABLE
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS products
+(
+    product_id INTEGER GENERATED ALWAYS AS IDENTITY,
+    product_name VARCHAR(255) NOT NULL,
+    product_price DECIMAL(11,2) NOT NULL,
+    brand_id INT DEFAULT 1,
+    -- Table constraint
+    CONSTRAINT pk_product_id PRIMARY KEY (product_id),
+    CONSTRAINT fk_brand_id FOREIGN KEY (brand_id) REFERENCES brands (brand_id) ON DELETE SET DEFAULT
+)
+**************************
+
+CREATE TABLE
+********* QUERY **********
+INSERT INTO brands
+(brand_name)
+VALUES
+('Apple'),
+('Samsung'),
+('Google')
+RETURNING brand_id, brand_name
+**************************
+
+ brand_id | brand_name 
+----------+------------
+        1 | Apple
+        2 | Samsung
+        3 | Google
+(3 rows)
+
+INSERT 0 3
+********* QUERY **********
+INSERT INTO products
+(product_name, product_price, brand_id)
+VALUES
+('iPhone 14 Pro', 999.99, 1),
+('iPhone 15 Pro', 1299.99, 1),
+('Galaxy S23 Ultra', 1299.99, 2)
+RETURNING product_id, product_name, product_price, brand_id
+**************************
+
+ product_id |   product_name   | product_price | brand_id 
+------------+------------------+---------------+----------
+          1 | iPhone 14 Pro    |        999.99 |        1
+          2 | iPhone 15 Pro    |       1299.99 |        1
+          3 | Galaxy S23 Ultra |       1299.99 |        2
+(3 rows)
+
+INSERT 0 3
+********* QUERY **********
+DELETE FROM brands WHERE brand_id = 1 RETURNING brand_id, brand_name
+**************************
+
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price,
+brand_id
+FROM
+products
+**************************
+
+ product_id |   product_name   | product_price | brand_id 
+------------+------------------+---------------+----------
+          1 | iPhone 14 Pro    |        999.99 |        1
+          2 | iPhone 15 Pro    |       1299.99 |        1
+          3 | Galaxy S23 Ultra |       1299.99 |        2
+(3 rows)
+

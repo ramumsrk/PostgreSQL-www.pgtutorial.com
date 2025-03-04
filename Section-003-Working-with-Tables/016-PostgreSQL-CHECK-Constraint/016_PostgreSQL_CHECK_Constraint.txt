@@ -1,0 +1,260 @@
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS products
+(
+    product_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    product_name VARCHAR(255),
+    product_price DECIMAL(11,2) NOT NULL CONSTRAINT check_product_price_greater_than_or_equal_to_zero (product_price >= 0),
+    discounted_product_price DEC(11, 2) NOT NULL DEFAULT 0
+)
+**************************
+
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS products
+(
+    product_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    product_name VARCHAR(255),
+    product_price DECIMAL(11,2) NOT NULL CONSTRAINT check_product_price_greater_than_or_equal_to_zero CHECK (product_price >= 0),
+    discounted_product_price DEC(11, 2) NOT NULL DEFAULT 0
+)
+**************************
+
+CREATE TABLE
+********* QUERY **********
+SELECT n.nspname as "Schema",
+  c.relname as "Name",
+  CASE c.relkind WHEN 'r' THEN 'table' WHEN 'v' THEN 'view' WHEN 'm' THEN 'materialized view' WHEN 'i' THEN 'index' WHEN 'S' THEN 'sequence' WHEN 't' THEN 'TOAST table' WHEN 'f' THEN 'foreign table' WHEN 'p' THEN 'partitioned table' WHEN 'I' THEN 'partitioned index' END as "Type",
+  pg_catalog.pg_get_userbyid(c.relowner) as "Owner",
+  CASE c.relpersistence WHEN 'p' THEN 'permanent' WHEN 't' THEN 'temporary' WHEN 'u' THEN 'unlogged' END as "Persistence",
+  am.amname as "Access method",
+  pg_catalog.pg_size_pretty(pg_catalog.pg_table_size(c.oid)) as "Size",
+  pg_catalog.obj_description(c.oid, 'pg_class') as "Description"
+FROM pg_catalog.pg_class c
+     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+     LEFT JOIN pg_catalog.pg_am am ON am.oid = c.relam
+WHERE c.relkind IN ('r','p','t','s','')
+  AND c.relname OPERATOR(pg_catalog.~) '^(products)$' COLLATE pg_catalog.default
+  AND pg_catalog.pg_table_is_visible(c.oid)
+ORDER BY 1,2;
+**************************
+
+                                      List of relations
+ Schema |   Name   | Type  |   Owner    | Persistence | Access method |  Size   | Description 
+--------+----------+-------+------------+-------------+---------------+---------+-------------
+ public | products | table | pgtutorial | permanent   | heap          | 0 bytes | 
+(1 row)
+
+********* QUERY **********
+CREATE SCHEMA IF NOT EXISTS pgtutorial AUTHORIZATION pgtutorial
+**************************
+
+CREATE SCHEMA
+********* QUERY **********
+ALTER ROLE IF EXISTS pgtutorial
+SCHEMA pgtutorial
+**************************
+
+********* QUERY **********
+ALTER ROLE pgtutorial
+SCHEMA pgtutorial
+**************************
+
+********* QUERY **********
+ALTER ROLE pgtutorial
+SET CURRENT_SCHEMA TO pgtutorial
+**************************
+
+********* QUERY **********
+SELECT
+CURRENT_SCHEMA
+**************************
+
+ current_schema 
+----------------
+ pgtutorial
+(1 row)
+
+********* QUERY **********
+SELECT n.nspname as "Schema",
+  c.relname as "Name",
+  CASE c.relkind WHEN 'r' THEN 'table' WHEN 'v' THEN 'view' WHEN 'm' THEN 'materialized view' WHEN 'i' THEN 'index' WHEN 'S' THEN 'sequence' WHEN 't' THEN 'TOAST table' WHEN 'f' THEN 'foreign table' WHEN 'p' THEN 'partitioned table' WHEN 'I' THEN 'partitioned index' END as "Type",
+  pg_catalog.pg_get_userbyid(c.relowner) as "Owner",
+  CASE c.relpersistence WHEN 'p' THEN 'permanent' WHEN 't' THEN 'temporary' WHEN 'u' THEN 'unlogged' END as "Persistence",
+  am.amname as "Access method",
+  pg_catalog.pg_size_pretty(pg_catalog.pg_table_size(c.oid)) as "Size",
+  pg_catalog.obj_description(c.oid, 'pg_class') as "Description"
+FROM pg_catalog.pg_class c
+     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+     LEFT JOIN pg_catalog.pg_am am ON am.oid = c.relam
+WHERE c.relkind IN ('r','p','t','s','')
+  AND c.relname OPERATOR(pg_catalog.~) '^(products)$' COLLATE pg_catalog.default
+  AND pg_catalog.pg_table_is_visible(c.oid)
+ORDER BY 1,2;
+**************************
+
+                                      List of relations
+ Schema |   Name   | Type  |   Owner    | Persistence | Access method |  Size   | Description 
+--------+----------+-------+------------+-------------+---------------+---------+-------------
+ public | products | table | pgtutorial | permanent   | heap          | 0 bytes | 
+(1 row)
+
+********* QUERY **********
+ALTER TABLE IF EXISTS products
+SET SCHEMA pgtutorial
+**************************
+
+ALTER TABLE
+********* QUERY **********
+SELECT n.nspname as "Schema",
+  c.relname as "Name",
+  CASE c.relkind WHEN 'r' THEN 'table' WHEN 'v' THEN 'view' WHEN 'm' THEN 'materialized view' WHEN 'i' THEN 'index' WHEN 'S' THEN 'sequence' WHEN 't' THEN 'TOAST table' WHEN 'f' THEN 'foreign table' WHEN 'p' THEN 'partitioned table' WHEN 'I' THEN 'partitioned index' END as "Type",
+  pg_catalog.pg_get_userbyid(c.relowner) as "Owner",
+  CASE c.relpersistence WHEN 'p' THEN 'permanent' WHEN 't' THEN 'temporary' WHEN 'u' THEN 'unlogged' END as "Persistence",
+  am.amname as "Access method",
+  pg_catalog.pg_size_pretty(pg_catalog.pg_table_size(c.oid)) as "Size",
+  pg_catalog.obj_description(c.oid, 'pg_class') as "Description"
+FROM pg_catalog.pg_class c
+     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+     LEFT JOIN pg_catalog.pg_am am ON am.oid = c.relam
+WHERE c.relkind IN ('r','p','t','s','')
+  AND c.relname OPERATOR(pg_catalog.~) '^(products)$' COLLATE pg_catalog.default
+  AND pg_catalog.pg_table_is_visible(c.oid)
+ORDER BY 1,2;
+**************************
+
+                                        List of relations
+   Schema   |   Name   | Type  |   Owner    | Persistence | Access method |  Size   | Description 
+------------+----------+-------+------------+-------------+---------------+---------+-------------
+ pgtutorial | products | table | pgtutorial | permanent   | heap          | 0 bytes | 
+(1 row)
+
+********* QUERY **********
+SELECT CURRENT_SCHEMA
+**************************
+
+ current_schema 
+----------------
+ pgtutorial
+(1 row)
+
+********* QUERY **********
+SELECT
+CURRENT_DATABASE(),
+CURRENT_ROLE,
+CURRENT_USER,
+CURRENT_SCHEMA
+**************************
+
+ current_database | current_role | current_user | current_schema 
+------------------+--------------+--------------+----------------
+ pgtutorial       | pgtutorial   | pgtutorial   | pgtutorial
+(1 row)
+
+********* QUERY **********
+INSERT INTO products
+(product_name, product_price)
+VALUES
+('iPhone Pro 15', -1299.99)
+RETURNING product_name, product_price
+**************************
+
+********* QUERY **********
+INSERT INTO products
+(product_name, product_price)
+VALUES
+('iPhone Pro 15', 1299.99)
+RETURNING product_name, product_price
+**************************
+
+ product_name  | product_price 
+---------------+---------------
+ iPhone Pro 15 |       1299.99
+(1 row)
+
+INSERT 0 1
+********* QUERY **********
+SELECT
+product_name,
+product_price
+FROM
+pgtutorial.pgtutorial
+**************************
+
+********* QUERY **********
+SELECT
+product_name,
+product_price
+FROM
+pgtutorial
+**************************
+
+********* QUERY **********
+SELECT
+product_name,
+product_price
+FROM
+pgtutorial.products
+**************************
+
+ product_name  | product_price 
+---------------+---------------
+ iPhone Pro 15 |       1299.99
+(1 row)
+
+********* QUERY **********
+SELECT
+*
+FROM
+pgtutorial.products
+**************************
+
+ product_id | product_name  | product_price | discounted_product_price 
+------------+---------------+---------------+--------------------------
+          2 | iPhone Pro 15 |       1299.99 |                     0.00
+(1 row)
+
+********* QUERY **********
+UPDATE pgtutorial.products
+SET product_price = -899.99
+WHERE product_id = 2
+RETURNING *
+**************************
+
+********* QUERY **********
+UPDATE pgtutorial.products
+SET product_price = 899.99
+WHERE product_id = 2
+RETURNING *
+**************************
+
+ product_id | product_name  | product_price | discounted_product_price 
+------------+---------------+---------------+--------------------------
+          2 | iPhone Pro 15 |        899.99 |                     0.00
+(1 row)
+
+UPDATE 1
+********* QUERY **********
+ALTER TABLE IF EXISTS pgtutorial.products
+ADD CONSTRAINT discounted_product_price_greater_than_product_price CHECK (discounted_product_price < product_price AND discounted_product_price > 0)
+**************************
+
+********* QUERY **********
+ALERT TABLE IF EXISTS pgtutorial.products
+DROP CONSTRAINT IF EXISTSdiscounted_product_price_greater_than_product_price
+**************************
+
+********* QUERY **********
+ALTER TABLE IF EXISTS pgtutorial.products
+DROP CONSTRAINT IF EXISTSdiscounted_product_price_greater_than_product_price
+**************************
+
+********* QUERY **********
+ALTER TABLE IF EXISTS pgtutorial.products
+DROP CONSTRAINT IF EXIST discounted_product_price_greater_than_product_price
+**************************
+
+********* QUERY **********
+ALTER TABLE IF EXISTS pgtutorial.products
+DROP CONSTRAINT IF EXISTS discounted_product_price_greater_than_product_price
+**************************
+
+ALTER TABLE

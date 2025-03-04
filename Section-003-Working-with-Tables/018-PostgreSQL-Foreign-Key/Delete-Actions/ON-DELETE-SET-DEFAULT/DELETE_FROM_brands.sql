@@ -1,0 +1,1 @@
+DELETE FROM brands WHERE brand_id = 1 RETURNING brand_id, brand_name\g

@@ -1,0 +1,114 @@
+********* QUERY **********
+SELECT
+NULL = 1 AS "Results"
+**************************
+
+ Results 
+---------
+ 
+(1 row)
+
+********* QUERY **********
+SELECT
+NULL = NULL AS "Results"
+**************************
+
+ Results 
+---------
+ 
+(1 row)
+
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS warehouses
+(
+    -- Column primary key
+    warehouse_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    warehouse_name VARCHAR(255),
+    warehouse_address VARCHAR(255)
+)
+**************************
+
+CREATE TABLE
+********* QUERY **********
+INSERT INTO warehouses
+(warehouse_name, warehouse_address )
+VALUES
+('San Jose', NULL)
+**************************
+
+INSERT 0 1
+********* QUERY **********
+SELECT
+*
+FROM
+warehouses
+**************************
+
+ warehouse_id | warehouse_name | warehouse_address 
+--------------+----------------+-------------------
+            1 | San Jose       | 
+(1 row)
+
+********* QUERY **********
+INSERT INTO warehouses
+(warehouse_name)
+VALUES
+('San Francisco')
+RETURNING *
+**************************
+
+ warehouse_id | warehouse_name | warehouse_address 
+--------------+----------------+-------------------
+            2 | San Francisco  | 
+(1 row)
+
+INSERT 0 1
+********* QUERY **********
+DROP TABLE IF EXISTS warehouses
+**************************
+
+DROP TABLE
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS warehouses
+(
+    warehouse_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    warehouse_name VARCHAR(255) NOT NULL,
+    warehouse_address VARCHAR(255) NOT NULL
+)
+**************************
+
+CREATE TABLE
+********* QUERY **********
+INSERT INTO warehouses
+(warehouse_name)
+VALUES
+('San Jose')
+RETURNING *
+**************************
+
+********* QUERY **********
+INSERT INTO warehouses
+(warehouse_name, warehouse_address)
+VALUES
+('San Meto', '1st Ave Suite, San Mateo', CA 94403')
+RETURNING *
+\g
+\c
+'
+)
+**************************
+
+********* QUERY **********
+INSERT INTO warehouses
+(warehouse_name, warehouse_address)
+VALUES
+('San Meto', '1st Ave Suite, San Mateo, CA 94403')
+RETURNING *
+**************************
+
+ warehouse_id | warehouse_name |         warehouse_address          
+--------------+----------------+------------------------------------
+            2 | San Meto       | 1st Ave Suite, San Mateo, CA 94403
+(1 row)
+
+INSERT 0 1

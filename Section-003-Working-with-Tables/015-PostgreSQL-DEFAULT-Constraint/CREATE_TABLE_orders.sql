@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS orders
+(
+    order_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    customer_name VARCHAR(50) NOT NULL,
+    shipping_address VARCHAR(255) NOT NULL,
+    order_placed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)\g

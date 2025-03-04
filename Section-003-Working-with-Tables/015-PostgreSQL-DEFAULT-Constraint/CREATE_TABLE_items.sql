@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS items
+(
+    item_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    item_name VARCHAR(255) NOT NULL,
+    item_quantity INTEGER NOT NULL,
+    item_price DECIMAL(11,2) NOT NULL,
+    item_tax DECIMAL(11,2) DEFAULT (5/100)
+)\g

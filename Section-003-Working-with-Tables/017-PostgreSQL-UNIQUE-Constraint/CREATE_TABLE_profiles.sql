@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS profiles
+(
+    user_id INTEGER PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    phone VARCHAR(25) UNIQUE
+)\g

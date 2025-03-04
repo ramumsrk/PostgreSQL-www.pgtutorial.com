@@ -1,0 +1,75 @@
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS brands
+(
+    -- Column constraint primary key
+    brand_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    brand_name VARCHAR(50)
+)
+**************************
+
+CREATE TABLE
+********* QUERY **********
+INSERT INTO brands
+(brand_name)
+VALUES
+('Apple')
+RETURNING brand_id, brand_name
+**************************
+
+ brand_id | brand_name 
+----------+------------
+        1 | Apple
+(1 row)
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO brands
+(brand_name)
+VALUES
+('Samsung')
+RETURNING brand_id, brand_name
+**************************
+
+ brand_id | brand_name 
+----------+------------
+        2 | Samsung
+(1 row)
+
+INSERT 0 1
+********* QUERY **********
+SELECT
+brand_id,
+brand_name
+FROM
+brands
+**************************
+
+ brand_id | brand_name 
+----------+------------
+        1 | Apple
+        2 | Samsung
+(2 rows)
+
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS product_tags
+(
+    product_id INT,
+    tag_id INTEGER
+    -- Table constraint composite
+    -- primary key
+    PRIMARY KEY (product_id, tag_id)
+)
+**************************
+
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS product_tags
+(
+    product_id INT,
+    tag_id INTEGER,
+    -- Table constraint composite
+    -- primary key
+    PRIMARY KEY (product_id, tag_id)
+)
+**************************
+
+CREATE TABLE
