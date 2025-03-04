@@ -1,0 +1,8 @@
+○ postgresql.service - PostgreSQL database server
+     Loaded: loaded (/usr/lib/systemd/system/postgresql.service; disabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: inactive (dead)
+
+Feb 25 15:05:00 Fedora-Linux-Workstation-Edition-Host-x86-64-41 systemd[1]: postgresql.service: Collecting.
+Feb 25 15:05:22 Fedora-Linux-Workstation-Edition-Host-x86-64-41 systemd[1]: postgresql.service: Collecting.

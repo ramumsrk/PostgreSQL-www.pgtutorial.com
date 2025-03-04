@@ -1,0 +1,30 @@
+● postgresql.service - PostgreSQL database server
+     Loaded: loaded (/usr/lib/systemd/system/postgresql.service; disabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: active (running) since Tue 2025-02-25 18:57:59 IST; 39s ago
+ Invocation: 0577a62a32aa40888eb1ab0cbda5514c
+    Process: 173138 ExecStartPre=/usr/libexec/postgresql-check-db-dir postgresql (code=exited, status=0/SUCCESS)
+   Main PID: 173141 (postgres)
+      Tasks: 7 (limit: 38003)
+     Memory: 17.8M (peak: 18.4M)
+        CPU: 69ms
+     CGroup: /system.slice/postgresql.service
+             ├─173141 /usr/bin/postgres -D /var/lib/pgsql/data
+             ├─173142 "postgres: logger "
+             ├─173143 "postgres: checkpointer "
+             ├─173144 "postgres: background writer "
+             ├─173146 "postgres: walwriter "
+             ├─173147 "postgres: autovacuum launcher "
+             └─173148 "postgres: logical replication launcher "
+
+Feb 25 18:57:59 Fedora-Linux-Workstation-Edition-Host-x86-64-41 (postgres)[173141]: Found cgroup2 on /sys/fs/cgroup/, full unified hierarchy
+Feb 25 18:57:59 Fedora-Linux-Workstation-Edition-Host-x86-64-41 (postgres)[173141]: Found cgroup2 on /sys/fs/cgroup/, full unified hierarchy
+Feb 25 18:57:59 Fedora-Linux-Workstation-Edition-Host-x86-64-41 (postgres)[173141]: postgresql.service: Executing: /usr/bin/postgres -D /var/lib/pgsql/data
+Feb 25 18:57:59 Fedora-Linux-Workstation-Edition-Host-x86-64-41 postgres[173141]: 2025-02-25 18:57:59.695 IST [173141] LOG:  redirecting log output to logging collector process
+Feb 25 18:57:59 Fedora-Linux-Workstation-Edition-Host-x86-64-41 postgres[173141]: 2025-02-25 18:57:59.695 IST [173141] HINT:  Future log output will appear in directory "log".
+Feb 25 18:57:59 Fedora-Linux-Workstation-Edition-Host-x86-64-41 systemd[1]: postgresql.service: Got notification message from PID 173141 (READY=1)
+Feb 25 18:57:59 Fedora-Linux-Workstation-Edition-Host-x86-64-41 systemd[1]: postgresql.service: Changed start -> running
+Feb 25 18:57:59 Fedora-Linux-Workstation-Edition-Host-x86-64-41 systemd[1]: postgresql.service: Job 40522 postgresql.service/start finished, result=done
+Feb 25 18:57:59 Fedora-Linux-Workstation-Edition-Host-x86-64-41 systemd[1]: Started postgresql.service - PostgreSQL database server.
+Feb 25 18:57:59 Fedora-Linux-Workstation-Edition-Host-x86-64-41 systemd[1]: postgresql.service: Failed to send unit change signal for postgresql.service: Connection reset by peer
