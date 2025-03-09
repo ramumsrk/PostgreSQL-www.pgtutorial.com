@@ -1,0 +1,8 @@
+-[ RECORD 1 ]-+------------------
+product_id    | 1
+product_name  | iPhone 16 Pro Max
+product_price | 1649.00
+
+-[ RECORD 1 ]--
+?column? | NULL
+

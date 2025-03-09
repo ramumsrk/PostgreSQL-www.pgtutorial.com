@@ -1,0 +1,20 @@
+-[ RECORD 1 ]-+------------------
+product_id    | 9
+product_name  | Galaxy Z Fold 6
+product_price | 2019.99
+-[ RECORD 2 ]-+------------------
+product_id    | 1
+product_name  | iPhone 16 Pro Max
+product_price | 1649.00
+-[ RECORD 3 ]-+------------------
+product_id    | 8
+product_name  | OnePlus Open
+product_price | 1514.99
+-[ RECORD 4 ]-+------------------
+product_id    | 3
+product_name  | Galaxy S24 Ultra
+product_price | 1299.99
+-[ RECORD 5 ]-+------------------
+product_id    | 4
+product_name  | Galaxy S24 FE
+product_price | 949.99

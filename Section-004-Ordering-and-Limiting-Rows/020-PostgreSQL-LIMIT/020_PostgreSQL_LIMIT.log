@@ -1,0 +1,375 @@
+********* QUERY **********
+SELECT
+CURRENT_DATABASE AS "Current database",
+CURRENT_USER,
+CURRENT_ROLE,
+CURRENT_SCHEMA
+**************************
+
+********* QUERY **********
+SELECT
+CURRENT_DATABASE() AS "Current database",
+CURRENT_USER,
+CURRENT_ROLE,
+CURRENT_SCHEMA
+************************** Current database | current_user | current_role | current_schema 
+------------------+--------------+--------------+----------------
+ pgtutorial       | pgtutorial   | pgtutorial   | pgtutorial
+(1 row)
+
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS products
+(
+    -- Column constraint
+    product_id INTEGER GENERATED ALWAYS AS IDENTITY CONSTRAINT pk_products_product_id PRIMARY KEY,
+    product_name CHARACTER VARYING(255) NOT NULL,
+    product_price NUMBER(10,2) DEFAULT NULL 
+)
+**************************
+
+CREATE TABLE
+********* QUERY **********
+DROP TABLE IF EXISTS products
+**************************
+
+DROP TABLE
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS products
+(
+    -- Column constraint
+    product_id INTEGER GENERATED ALWAYS AS IDENTITY CONSTRAINT pk_products_product_id PRIMARY KEY,
+    product_name CHARACTER VARYING(255) NOT NULL,
+    product_price NUMBER(10,2) DEFAULT NULL 
+)
+**************************
+
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS products
+(
+    -- Column constraint
+    product_id INTEGER GENERATED ALWAYS AS IDENTITY CONSTRAINT pk_products_product_id PRIMARY KEY,
+    product_name CHARACTER VARYING(255) NOT NULL,
+    product_price DECIMAL(10,2) DEFAULT NULL 
+)
+**************************
+
+CREATE TABLE
+********* QUERY **********
+INSERT INTO
+products
+(product_name, product_price)
+VALUES
+('iPhone 16 Pro Max', 1649.00),
+('iPhone 16', 829.00),
+('Galaxy S24 Ultra', 1299.99),
+('Galaxy S24 FE', 949.99),
+('Pixel 9 Pro', 799.00),
+('Pixel 8a', 399.00),
+('OnePlus 12', 745.00),
+('OnePlus Open', 1514.99),
+('Galaxy Z Fold 6', 2019.99)
+RETURNING product_id, product_name, product_price
+**************************
+
+ product_id |   product_name    | product_price 
+------------+-------------------+---------------
+          1 | iPhone 16 Pro Max |       1649.00
+          2 | iPhone 16         |        829.00
+          3 | Galaxy S24 Ultra  |       1299.99
+          4 | Galaxy S24 FE     |        949.99
+          5 | Pixel 9 Pro       |        799.00
+          6 | Pixel 8a          |        399.00
+          7 | OnePlus 12        |        745.00
+          8 | OnePlus Open      |       1514.99
+          9 | Galaxy Z Fold 6   |       2019.99
+(9 rows)
+
+INSERT 0 9
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price
+FROM
+products
+ORDER BY product_price DESC
+LIMIT 5
+**************************
+
+ product_id |   product_name    | product_price 
+------------+-------------------+---------------
+          9 | Galaxy Z Fold 6   |       2019.99
+          1 | iPhone 16 Pro Max |       1649.00
+          8 | OnePlus Open      |       1514.99
+          3 | Galaxy S24 Ultra  |       1299.99
+          4 | Galaxy S24 FE     |        949.99
+(5 rows)
+
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price,
+FROM
+products
+ORDER BY product_id ASC
+**************************
+
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price
+FROM
+products
+ORDER BY product_id ASC
+**************************
+
+ product_id |   product_name    | product_price 
+------------+-------------------+---------------
+          1 | iPhone 16 Pro Max |       1649.00
+          2 | iPhone 16         |        829.00
+          3 | Galaxy S24 Ultra  |       1299.99
+          4 | Galaxy S24 FE     |        949.99
+          5 | Pixel 9 Pro       |        799.00
+          6 | Pixel 8a          |        399.00
+          7 | OnePlus 12        |        745.00
+          8 | OnePlus Open      |       1514.99
+          9 | Galaxy Z Fold 6   |       2019.99
+(9 rows)
+
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price
+FROM
+products
+ORDER BY product_id ASC
+**************************
+
+ product_id |   product_name    | product_price 
+------------+-------------------+---------------
+          1 | iPhone 16 Pro Max |       1649.00
+          2 | iPhone 16         |        829.00
+          3 | Galaxy S24 Ultra  |       1299.99
+          4 | Galaxy S24 FE     |        949.99
+          5 | Pixel 9 Pro       |        799.00
+          6 | Pixel 8a          |        399.00
+          7 | OnePlus 12        |        745.00
+          8 | OnePlus Open      |       1514.99
+          9 | Galaxy Z Fold 6   |       2019.99
+(9 rows)
+
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price
+FROM
+products
+ORDER BY product_id DESC
+**************************
+
+ product_id |   product_name    | product_price 
+------------+-------------------+---------------
+          9 | Galaxy Z Fold 6   |       2019.99
+          8 | OnePlus Open      |       1514.99
+          7 | OnePlus 12        |        745.00
+          6 | Pixel 8a          |        399.00
+          5 | Pixel 9 Pro       |        799.00
+          4 | Galaxy S24 FE     |        949.99
+          3 | Galaxy S24 Ultra  |       1299.99
+          2 | iPhone 16         |        829.00
+          1 | iPhone 16 Pro Max |       1649.00
+(9 rows)
+
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price
+FROM
+products
+ORDER BY product_id ASC
+**************************
+
+ product_id |   product_name    | product_price 
+------------+-------------------+---------------
+          1 | iPhone 16 Pro Max |       1649.00
+          2 | iPhone 16         |        829.00
+          3 | Galaxy S24 Ultra  |       1299.99
+          4 | Galaxy S24 FE     |        949.99
+          5 | Pixel 9 Pro       |        799.00
+          6 | Pixel 8a          |        399.00
+          7 | OnePlus 12        |        745.00
+          8 | OnePlus Open      |       1514.99
+          9 | Galaxy Z Fold 6   |       2019.99
+(9 rows)
+
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price
+FROM
+products
+ORDER BY product_id DESC
+**************************
+
+ product_id |   product_name    | product_price 
+------------+-------------------+---------------
+          9 | Galaxy Z Fold 6   |       2019.99
+          8 | OnePlus Open      |       1514.99
+          7 | OnePlus 12        |        745.00
+          6 | Pixel 8a          |        399.00
+          5 | Pixel 9 Pro       |        799.00
+          4 | Galaxy S24 FE     |        949.99
+          3 | Galaxy S24 Ultra  |       1299.99
+          2 | iPhone 16         |        829.00
+          1 | iPhone 16 Pro Max |       1649.00
+(9 rows)
+
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price
+FROM
+products
+ORDER BY product_id DESC
+LIMIT 5 OFFSET 2
+**************************
+
+ product_id |   product_name   | product_price 
+------------+------------------+---------------
+          7 | OnePlus 12       |        745.00
+          6 | Pixel 8a         |        399.00
+          5 | Pixel 9 Pro      |        799.00
+          4 | Galaxy S24 FE    |        949.99
+          3 | Galaxy S24 Ultra |       1299.99
+(5 rows)
+
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price
+FROM
+inventories
+ORDER BY product_rice DESC
+FETCH FIRST ROW ONLY
+**************************
+
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price
+FROM
+products
+ORDER BY product_rice DESC
+FETCH FIRST ROW ONLY
+**************************
+
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price
+FROM
+products
+ORDER BY product_price DESC
+FETCH FIRST ROW ONLY
+**************************
+
+ product_id |  product_name   | product_price 
+------------+-----------------+---------------
+          9 | Galaxy Z Fold 6 |       2019.99
+(1 row)
+
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price
+FROM
+products
+ORDER BY product_price DESC
+FETCH FIRST 3 ROWS ONLY
+**************************
+
+ product_id |   product_name    | product_price 
+------------+-------------------+---------------
+          9 | Galaxy Z Fold 6   |       2019.99
+          1 | iPhone 16 Pro Max |       1649.00
+          8 | OnePlus Open      |       1514.99
+(3 rows)
+
+********* QUERY **********
+SELECT
+product_id,
+product_name,
+product_price
+FROM
+products
+ORDER BY product_price DESC
+OFFSET 1
+FETCH FIRST 1 ROW ONLY
+**************************
+
+ product_id |   product_name    | product_price 
+------------+-------------------+---------------
+          1 | iPhone 16 Pro Max |       1649.00
+(1 row)
+
+********* QUERY **********
+SELECT
+10 = NULL
+**************************
+
+ ?column? 
+----------
+ NULL
+(1 row)
+
+********* QUERY **********
+SELECT
+10 = NULL
+**************************
+
+ ?column? 
+----------
+ NULL
+(1 row)
+
+********* QUERY **********
+SELECT
+10 = NULL AS "Expression"
+**************************
+
+ Expression 
+------------
+ NULL
+(1 row)
+
+********* QUERY **********
+SELECT
+NULL IS NOT NULL AS "Expression"
+**************************
+
+ Expression 
+------------
+ f
+(1 row)
+
+********* QUERY **********
+SELECT
+NULL IS NULL AS "Expression"
+**************************
+
+ Expression 
+------------
+ t
+(1 row)
+
