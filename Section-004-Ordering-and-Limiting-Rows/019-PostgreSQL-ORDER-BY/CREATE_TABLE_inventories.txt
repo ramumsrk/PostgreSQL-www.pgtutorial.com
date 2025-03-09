@@ -1,0 +1,10 @@
+CREATE TABLE
+                                Table "pgtutorial.inventories"
+       Column        |          Type          | Collation | Nullable |         Default         
+---------------------+------------------------+-----------+----------+-------------------------
+ product_name        | character varying(255) |           | not null | 
+ product_price       | numeric(11,2)          |           | not null | 
+ product_quantity    | integer                |           | not null | 
+ product_color       | character varying(50)  |           |          | NULL::character varying
+ product_update_date | date                   |           | not null | 
+

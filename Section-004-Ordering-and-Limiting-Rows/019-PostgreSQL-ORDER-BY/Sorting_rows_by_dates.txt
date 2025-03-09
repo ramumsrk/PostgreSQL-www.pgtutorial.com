@@ -1,0 +1,59 @@
+-[ RECORD 1 ]------------------
+update_date | Galaxy S23
+-[ RECORD 2 ]------------------
+update_date | Galaxy S23 Ultra
+-[ RECORD 3 ]------------------
+update_date | iPhone 15 Black
+-[ RECORD 4 ]------------------
+update_date | iPhone 15 Pro
+-[ RECORD 5 ]------------------
+update_date | iPhone 15 Pro Max
+-[ RECORD 6 ]------------------
+update_date | Pixel 8
+-[ RECORD 7 ]------------------
+update_date | Pixel 8 Pro
+
+-[ RECORD 1 ]-------+------------------
+product_name        | iPhone 15 Black
+product_update_date | 2024-12-01
+-[ RECORD 2 ]-------+------------------
+product_name        | Galaxy S23
+product_update_date | 2024-12-02
+-[ RECORD 3 ]-------+------------------
+product_name        | Pixel 8
+product_update_date | 2024-12-02
+-[ RECORD 4 ]-------+------------------
+product_name        | iPhone 15 Pro
+product_update_date | 2024-12-03
+-[ RECORD 5 ]-------+------------------
+product_name        | Galaxy S23 Ultra
+product_update_date | 2024-12-03
+-[ RECORD 6 ]-------+------------------
+product_name        | Pixel 8 Pro
+product_update_date | 2024-12-03
+-[ RECORD 7 ]-------+------------------
+product_name        | iPhone 15 Pro Max
+product_update_date | 2024-12-04
+
+-[ RECORD 1 ]-------+------------------
+product_name        | iPhone 15 Pro Max
+product_update_date | 2024-12-04
+-[ RECORD 2 ]-------+------------------
+product_name        | iPhone 15 Pro
+product_update_date | 2024-12-03
+-[ RECORD 3 ]-------+------------------
+product_name        | Galaxy S23 Ultra
+product_update_date | 2024-12-03
+-[ RECORD 4 ]-------+------------------
+product_name        | Pixel 8 Pro
+product_update_date | 2024-12-03
+-[ RECORD 5 ]-------+------------------
+product_name        | Galaxy S23
+product_update_date | 2024-12-02
+-[ RECORD 6 ]-------+------------------
+product_name        | Pixel 8
+product_update_date | 2024-12-02
+-[ RECORD 7 ]-------+------------------
+product_name        | iPhone 15 Black
+product_update_date | 2024-12-01
+

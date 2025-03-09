@@ -1,0 +1,50 @@
+-[ RECORD 1 ]-------+------------------
+product_name        | Galaxy S23
+product_price       | 899.99
+product_quantity    | 12
+product_color       | 
+product_update_date | 2024-12-02
+Inventory amount    | 10799.88
+-[ RECORD 2 ]-------+------------------
+product_name        | iPhone 15 Black
+product_price       | 999.99
+product_quantity    | 10
+product_color       | Black
+product_update_date | 2024-12-01
+Inventory amount    | 9999.90
+-[ RECORD 3 ]-------+------------------
+product_name        | Pixel 8 Pro
+product_price       | 999.99
+product_quantity    | 9
+product_color       | Red
+product_update_date | 2024-12-03
+Inventory amount    | 8999.91
+-[ RECORD 4 ]-------+------------------
+product_name        | iPhone 15 Pro
+product_price       | 1099.99
+product_quantity    | 6
+product_color       | Silver
+product_update_date | 2024-12-03
+Inventory amount    | 6599.94
+-[ RECORD 5 ]-------+------------------
+product_name        | Pixel 8
+product_price       | 799.99
+product_quantity    | 7
+product_color       | 
+product_update_date | 2024-12-02
+Inventory amount    | 5599.93
+-[ RECORD 6 ]-------+------------------
+product_name        | Galaxy S23 Ultra
+product_price       | 1199.99
+product_quantity    | 4
+product_color       | Black
+product_update_date | 2024-12-03
+Inventory amount    | 4799.96
+-[ RECORD 7 ]-------+------------------
+product_name        | iPhone 15 Pro Max
+product_price       | 1299.99
+product_quantity    | 3
+product_color       | Gold
+product_update_date | 2024-12-04
+Inventory amount    | 3899.97
+

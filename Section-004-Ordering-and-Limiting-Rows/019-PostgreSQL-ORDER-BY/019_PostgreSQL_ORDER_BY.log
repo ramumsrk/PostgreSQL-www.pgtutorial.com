@@ -1,0 +1,421 @@
+********* QUERY **********
+SELECT
+CURRENT_DATABASE() AS "Current database",
+CURRENT_USER,
+CURRENT_ROLE,
+CURRENT_SCHEMA,
+CURRENT_TIMESTAMP
+**************************
+
+ Current database | current_user | current_role | current_schema |        current_timestamp         
+------------------+--------------+--------------+----------------+----------------------------------
+ pgtutorial       | pgtutorial   | pgtutorial   | pgtutorial     | 2025-03-09 09:06:46.473882+05:30
+(1 row)
+
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS inventories
+(
+    product_name VARCHAR(255) NOT NULL,
+    product_price DECIMAL(11,2) NOT NULL,
+    product_quantity INTEGER NOT NULL,
+    product_color CHARACTER VARYING(50) DEFAULT NULL,
+    product_update_date DATE NOT NULL
+)
+/g
+**************************
+
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS inventories
+(
+    product_name VARCHAR(255) NOT NULL,
+    product_price DECIMAL(11,2) NOT NULL,
+    product_quantity INTEGER NOT NULL,
+    product_color CHARACTER VARYING(50) DEFAULT NULL,
+    product_update_date DATE NOT NULL
+)
+**************************
+
+CREATE TABLE
+********* QUERY **********
+SELECT c.oid,
+  n.nspname,
+  c.relname
+FROM pg_catalog.pg_class c
+     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+WHERE c.relname OPERATOR(pg_catalog.~) '^(inventories)$' COLLATE pg_catalog.default
+  AND pg_catalog.pg_table_is_visible(c.oid)
+ORDER BY 2, 3;
+**************************
+
+********* QUERY **********
+SELECT c.relchecks, c.relkind, c.relhasindex, c.relhasrules, c.relhastriggers, c.relrowsecurity, c.relforcerowsecurity, false AS relhasoids, c.relispartition, '', c.reltablespace, CASE WHEN c.reloftype = 0 THEN '' ELSE c.reloftype::pg_catalog.regtype::pg_catalog.text END, c.relpersistence, c.relreplident, am.amname
+FROM pg_catalog.pg_class c
+ LEFT JOIN pg_catalog.pg_class tc ON (c.reltoastrelid = tc.oid)
+LEFT JOIN pg_catalog.pg_am am ON (c.relam = am.oid)
+WHERE c.oid = '16899';
+**************************
+
+********* QUERY **********
+SELECT a.attname,
+  pg_catalog.format_type(a.atttypid, a.atttypmod),
+  (SELECT pg_catalog.pg_get_expr(d.adbin, d.adrelid, true)
+   FROM pg_catalog.pg_attrdef d
+   WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum AND a.atthasdef),
+  a.attnotnull,
+  (SELECT c.collname FROM pg_catalog.pg_collation c, pg_catalog.pg_type t
+   WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation) AS attcollation,
+  a.attidentity,
+  a.attgenerated
+FROM pg_catalog.pg_attribute a
+WHERE a.attrelid = '16899' AND a.attnum > 0 AND NOT a.attisdropped
+ORDER BY a.attnum;
+**************************
+
+********* QUERY **********
+SELECT pol.polname, pol.polpermissive,
+  CASE WHEN pol.polroles = '{0}' THEN NULL ELSE pg_catalog.array_to_string(array(select rolname from pg_catalog.pg_roles where oid = any (pol.polroles) order by 1),',') END,
+  pg_catalog.pg_get_expr(pol.polqual, pol.polrelid),
+  pg_catalog.pg_get_expr(pol.polwithcheck, pol.polrelid),
+  CASE pol.polcmd
+    WHEN 'r' THEN 'SELECT'
+    WHEN 'a' THEN 'INSERT'
+    WHEN 'w' THEN 'UPDATE'
+    WHEN 'd' THEN 'DELETE'
+    END AS cmd
+FROM pg_catalog.pg_policy pol
+WHERE pol.polrelid = '16899' ORDER BY 1;
+**************************
+
+********* QUERY **********
+SELECT oid, stxrelid::pg_catalog.regclass, stxnamespace::pg_catalog.regnamespace::pg_catalog.text AS nsp, stxname,
+pg_catalog.pg_get_statisticsobjdef_columns(oid) AS columns,
+  'd' = any(stxkind) AS ndist_enabled,
+  'f' = any(stxkind) AS deps_enabled,
+  'm' = any(stxkind) AS mcv_enabled,
+stxstattarget
+FROM pg_catalog.pg_statistic_ext
+WHERE stxrelid = '16899'
+ORDER BY nsp, stxname;
+**************************
+
+********* QUERY **********
+SELECT pubname
+     , NULL
+     , NULL
+FROM pg_catalog.pg_publication p
+     JOIN pg_catalog.pg_publication_namespace pn ON p.oid = pn.pnpubid
+     JOIN pg_catalog.pg_class pc ON pc.relnamespace = pn.pnnspid
+WHERE pc.oid ='16899' and pg_catalog.pg_relation_is_publishable('16899')
+UNION
+SELECT pubname
+     , pg_get_expr(pr.prqual, c.oid)
+     , (CASE WHEN pr.prattrs IS NOT NULL THEN
+         (SELECT string_agg(attname, ', ')
+           FROM pg_catalog.generate_series(0, pg_catalog.array_upper(pr.prattrs::pg_catalog.int2[], 1)) s,
+                pg_catalog.pg_attribute
+          WHERE attrelid = pr.prrelid AND attnum = prattrs[s])
+        ELSE NULL END) FROM pg_catalog.pg_publication p
+     JOIN pg_catalog.pg_publication_rel pr ON p.oid = pr.prpubid
+     JOIN pg_catalog.pg_class c ON c.oid = pr.prrelid
+WHERE pr.prrelid = '16899'
+UNION
+SELECT pubname
+     , NULL
+     , NULL
+FROM pg_catalog.pg_publication p
+WHERE p.puballtables AND pg_catalog.pg_relation_is_publishable('16899')
+ORDER BY 1;
+**************************
+
+********* QUERY **********
+SELECT c.oid::pg_catalog.regclass
+FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i
+WHERE c.oid = i.inhparent AND i.inhrelid = '16899'
+  AND c.relkind != 'p' AND c.relkind != 'I'
+ORDER BY inhseqno;
+**************************
+
+********* QUERY **********
+SELECT c.oid::pg_catalog.regclass, c.relkind, inhdetachpending, pg_catalog.pg_get_expr(c.relpartbound, c.oid)
+FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i
+WHERE c.oid = i.inhrelid AND i.inhparent = '16899'
+ORDER BY pg_catalog.pg_get_expr(c.relpartbound, c.oid) = 'DEFAULT', c.oid::pg_catalog.regclass::pg_catalog.text;
+**************************
+
+                                Table "pgtutorial.inventories"
+       Column        |          Type          | Collation | Nullable |         Default         
+---------------------+------------------------+-----------+----------+-------------------------
+ product_name        | character varying(255) |           | not null | 
+ product_price       | numeric(11,2)          |           | not null | 
+ product_quantity    | integer                |           | not null | 
+ product_color       | character varying(50)  |           |          | NULL::character varying
+ product_update_date | date                   |           | not null | 
+
+********* QUERY **********
+INSERT INTO inventories
+(product_name, product_price, product_quantity, product_color,product_update_date)
+VALUES
+('iPhone 15 Black', 999.99, 10, 'Black', '2024-12-01'),
+('Galaxy S23', 899.99, 12, NULL, '2024-12-02'),
+('Pixel 8', 799.99, 7, NULL, '2024-12-02'),
+('iPhone 15 Pro', 1099.99, 6, 'Silver', '2024-12-03'),
+('Galaxy S23 Ultra', 1199.99, 4, 'Black', '2024-12-03'),
+('Pixel 8 Pro', 999.99, 9, 'Red', '2024-12-03'),
+('iPhone 15 Pro Max', 1299.99, 3, 'Gold', '2024-12-04')
+RETURNING product_name, product_price, product_quantity, product_color,product_update_date
+**************************
+
+   product_name    | product_price | product_quantity | product_color | product_update_date 
+-------------------+---------------+------------------+---------------+---------------------
+ iPhone 15 Black   |        999.99 |               10 | Black         | 2024-12-01
+ Galaxy S23        |        899.99 |               12 |               | 2024-12-02
+ Pixel 8           |        799.99 |                7 |               | 2024-12-02
+ iPhone 15 Pro     |       1099.99 |                6 | Silver        | 2024-12-03
+ Galaxy S23 Ultra  |       1199.99 |                4 | Black         | 2024-12-03
+ Pixel 8 Pro       |        999.99 |                9 | Red           | 2024-12-03
+ iPhone 15 Pro Max |       1299.99 |                3 | Gold          | 2024-12-04
+(7 rows)
+
+INSERT 0 7
+********* QUERY **********
+SELECT
+product_name,
+product_price,
+product_quantity,
+product_color,
+product_update_date
+FROM
+inventories
+ORDER BY product_price
+**************************
+
+   product_name    | product_price | product_quantity | product_color | product_update_date 
+-------------------+---------------+------------------+---------------+---------------------
+ Pixel 8           |        799.99 |                7 |               | 2024-12-02
+ Galaxy S23        |        899.99 |               12 |               | 2024-12-02
+ Pixel 8 Pro       |        999.99 |                9 | Red           | 2024-12-03
+ iPhone 15 Black   |        999.99 |               10 | Black         | 2024-12-01
+ iPhone 15 Pro     |       1099.99 |                6 | Silver        | 2024-12-03
+ Galaxy S23 Ultra  |       1199.99 |                4 | Black         | 2024-12-03
+ iPhone 15 Pro Max |       1299.99 |                3 | Gold          | 2024-12-04
+(7 rows)
+
+********* QUERY **********
+SELECT
+product_name,
+product_price,
+product_quantity,
+product_color,
+product_update_date
+FROM
+inventories
+ORDER BY product_price DESC
+**************************
+
+   product_name    | product_price | product_quantity | product_color | product_update_date 
+-------------------+---------------+------------------+---------------+---------------------
+ iPhone 15 Pro Max |       1299.99 |                3 | Gold          | 2024-12-04
+ Galaxy S23 Ultra  |       1199.99 |                4 | Black         | 2024-12-03
+ iPhone 15 Pro     |       1099.99 |                6 | Silver        | 2024-12-03
+ iPhone 15 Black   |        999.99 |               10 | Black         | 2024-12-01
+ Pixel 8 Pro       |        999.99 |                9 | Red           | 2024-12-03
+ Galaxy S23        |        899.99 |               12 |               | 2024-12-02
+ Pixel 8           |        799.99 |                7 |               | 2024-12-02
+(7 rows)
+
+********* QUERY **********
+SELECT
+product_name,
+product_price,
+product_quantity,
+product_color,
+product_update_date
+FROM
+inventories
+ORDER BY product_price DESC, product_name DESC
+**************************
+
+   product_name    | product_price | product_quantity | product_color | product_update_date 
+-------------------+---------------+------------------+---------------+---------------------
+ iPhone 15 Pro Max |       1299.99 |                3 | Gold          | 2024-12-04
+ Galaxy S23 Ultra  |       1199.99 |                4 | Black         | 2024-12-03
+ iPhone 15 Pro     |       1099.99 |                6 | Silver        | 2024-12-03
+ Pixel 8 Pro       |        999.99 |                9 | Red           | 2024-12-03
+ iPhone 15 Black   |        999.99 |               10 | Black         | 2024-12-01
+ Galaxy S23        |        899.99 |               12 |               | 2024-12-02
+ Pixel 8           |        799.99 |                7 |               | 2024-12-02
+(7 rows)
+
+********* QUERY **********
+SELECT
+product_name,
+product_price,
+product_quantity,
+product_color,
+product_update_date,
+-- This is a virtual column
+product_price * product_quantity AS "Inventory amount"
+FROM
+inventories
+ORDER BY (product_price * product_quantity) DESC
+**************************
+
+   product_name    | product_price | product_quantity | product_color | product_update_date | Inventory amount 
+-------------------+---------------+------------------+---------------+---------------------+------------------
+ Galaxy S23        |        899.99 |               12 |               | 2024-12-02          |         10799.88
+ iPhone 15 Black   |        999.99 |               10 | Black         | 2024-12-01          |          9999.90
+ Pixel 8 Pro       |        999.99 |                9 | Red           | 2024-12-03          |          8999.91
+ iPhone 15 Pro     |       1099.99 |                6 | Silver        | 2024-12-03          |          6599.94
+ Pixel 8           |        799.99 |                7 |               | 2024-12-02          |          5599.93
+ Galaxy S23 Ultra  |       1199.99 |                4 | Black         | 2024-12-03          |          4799.96
+ iPhone 15 Pro Max |       1299.99 |                3 | Gold          | 2024-12-04          |          3899.97
+(7 rows)
+
+********* QUERY **********
+SELECT
+product_name
+update_date
+FROM
+inventories
+ORDER BY update_date ASC
+/g
+**************************
+
+********* QUERY **********
+SELECT
+product_name
+update_date
+FROM
+inventories
+ORDER BY update_date ASC
+**************************
+
+    update_date    
+-------------------
+ Galaxy S23
+ Galaxy S23 Ultra
+ iPhone 15 Black
+ iPhone 15 Pro
+ iPhone 15 Pro Max
+ Pixel 8
+ Pixel 8 Pro
+(7 rows)
+
+********* QUERY **********
+SELECT
+product_name,
+update_date
+FROM
+inventories
+ORDER BY update_date ASC
+**************************
+
+********* QUERY **********
+SELECT
+product_name,
+product_update_date
+FROM
+inventories
+ORDER BY update_date ASC
+**************************
+
+********* QUERY **********
+SELECT
+product_name,
+product_update_date
+FROM
+inventories
+ORDER BY product_update_date ASC
+**************************
+
+   product_name    | product_update_date 
+-------------------+---------------------
+ iPhone 15 Black   | 2024-12-01
+ Galaxy S23        | 2024-12-02
+ Pixel 8           | 2024-12-02
+ iPhone 15 Pro     | 2024-12-03
+ Galaxy S23 Ultra  | 2024-12-03
+ Pixel 8 Pro       | 2024-12-03
+ iPhone 15 Pro Max | 2024-12-04
+(7 rows)
+
+********* QUERY **********
+SELECT
+product_name,
+product_update_date
+FROM
+inventories
+ORDER BY product_update_date DESC
+**************************
+
+   product_name    | product_update_date 
+-------------------+---------------------
+ iPhone 15 Pro Max | 2024-12-04
+ iPhone 15 Pro     | 2024-12-03
+ Galaxy S23 Ultra  | 2024-12-03
+ Pixel 8 Pro       | 2024-12-03
+ Galaxy S23        | 2024-12-02
+ Pixel 8           | 2024-12-02
+ iPhone 15 Black   | 2024-12-01
+(7 rows)
+
+********* QUERY **********
+SELECT
+product_name,
+product_color
+FROM
+inventories
+ORDER BY product_color ASC NULLS FIRST
+**************************
+
+   product_name    | product_color 
+-------------------+---------------
+ Galaxy S23        | 
+ Pixel 8           | 
+ iPhone 15 Black   | Black
+ Galaxy S23 Ultra  | Black
+ iPhone 15 Pro Max | Gold
+ Pixel 8 Pro       | Red
+ iPhone 15 Pro     | Silver
+(7 rows)
+
+********* QUERY **********
+SELECT
+product_name,
+product_color
+FROM
+inventories
+ORDER BY product_color ASC NULLS FIRST
+**************************
+
+   product_name    | product_color 
+-------------------+---------------
+ Galaxy S23        | 
+ Pixel 8           | 
+ iPhone 15 Black   | Black
+ Galaxy S23 Ultra  | Black
+ iPhone 15 Pro Max | Gold
+ Pixel 8 Pro       | Red
+ iPhone 15 Pro     | Silver
+(7 rows)
+
+********* QUERY **********
+SELECT
+product_name,
+product_color
+FROM
+inventories
+ORDER BY product_color ASC NULLS LAST
+**************************
+
+   product_name    | product_color 
+-------------------+---------------
+ Galaxy S23 Ultra  | Black
+ iPhone 15 Black   | Black
+ iPhone 15 Pro Max | Gold
+ Pixel 8 Pro       | Red
+ iPhone 15 Pro     | Silver
+ Pixel 8           | 
+ Galaxy S23        | 
+(7 rows)
+

@@ -1,0 +1,66 @@
+-[ RECORD 1 ]-+------------------
+product_name  | Galaxy S23
+product_color | 
+-[ RECORD 2 ]-+------------------
+product_name  | Pixel 8
+product_color | 
+-[ RECORD 3 ]-+------------------
+product_name  | iPhone 15 Black
+product_color | Black
+-[ RECORD 4 ]-+------------------
+product_name  | Galaxy S23 Ultra
+product_color | Black
+-[ RECORD 5 ]-+------------------
+product_name  | iPhone 15 Pro Max
+product_color | Gold
+-[ RECORD 6 ]-+------------------
+product_name  | Pixel 8 Pro
+product_color | Red
+-[ RECORD 7 ]-+------------------
+product_name  | iPhone 15 Pro
+product_color | Silver
+
+-[ RECORD 1 ]-+------------------
+product_name  | Galaxy S23
+product_color | 
+-[ RECORD 2 ]-+------------------
+product_name  | Pixel 8
+product_color | 
+-[ RECORD 3 ]-+------------------
+product_name  | iPhone 15 Black
+product_color | Black
+-[ RECORD 4 ]-+------------------
+product_name  | Galaxy S23 Ultra
+product_color | Black
+-[ RECORD 5 ]-+------------------
+product_name  | iPhone 15 Pro Max
+product_color | Gold
+-[ RECORD 6 ]-+------------------
+product_name  | Pixel 8 Pro
+product_color | Red
+-[ RECORD 7 ]-+------------------
+product_name  | iPhone 15 Pro
+product_color | Silver
+
+-[ RECORD 1 ]-+------------------
+product_name  | Galaxy S23 Ultra
+product_color | Black
+-[ RECORD 2 ]-+------------------
+product_name  | iPhone 15 Black
+product_color | Black
+-[ RECORD 3 ]-+------------------
+product_name  | iPhone 15 Pro Max
+product_color | Gold
+-[ RECORD 4 ]-+------------------
+product_name  | Pixel 8 Pro
+product_color | Red
+-[ RECORD 5 ]-+------------------
+product_name  | iPhone 15 Pro
+product_color | Silver
+-[ RECORD 6 ]-+------------------
+product_name  | Pixel 8
+product_color | 
+-[ RECORD 7 ]-+------------------
+product_name  | Galaxy S23
+product_color | 
+
