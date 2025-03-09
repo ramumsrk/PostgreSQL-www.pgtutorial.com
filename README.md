@@ -23,6 +23,13 @@ My one or more attempts at the contents of [PostgreSQL Tutorial](https://www.pgt
 13. [PostgreSQL Primary Key](https://www.pgtutorial.com/postgresql-tutorial/postgresql-primary-key/)
 14. [PostgreSQL NOT NULL Constraint](https://www.pgtutorial.com/postgresql-tutorial/postgresql-not-null/)
 15. [PostgreSQL DEFAULT Constraint](https://www.pgtutorial.com/postgresql-tutorial/postgresql-default-constraint/)
-16. PostgreSQL CHECK Constraint
-17. PostgreSQL UNIQUE Constraint
-18. PostgreSQL Foreign Key
+16. [PostgreSQL CHECK Constraint](https://www.pgtutorial.com/postgresql-tutorial/postgresql-check-constraint/)
+17. [PostgreSQL UNIQUE Constraint](https://www.pgtutorial.com/postgresql-tutorial/postgresql-unique-constraint/)
+18. [PostgreSQL Foreign Key](https://www.pgtutorial.com/postgresql-tutorial/postgresql-foreign-key/)
+
+## Section 4: Ordering and Limiting Rows
+
+19. [PostgreSQL ORDER BY](https://www.pgtutorial.com/postgresql-tutorial/postgresql-order-by/)
+20. [PostgreSQL LIMIT](https://www.pgtutorial.com/postgresql-tutorial/postgresql-limit/)
+21. [PostgreSQL FETCH](https://www.pgtutorial.com/postgresql-tutorial/postgresql-fetch/)
+22. [PostgreSQL IS NULL Operator](https://www.pgtutorial.com/postgresql-tutorial/postgresql-is-null/)
