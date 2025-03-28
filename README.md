@@ -33,3 +33,18 @@ My one or more attempts at the contents of [PostgreSQL Tutorial](https://www.pgt
 20. [PostgreSQL LIMIT](https://www.pgtutorial.com/postgresql-tutorial/postgresql-limit/)
 21. [PostgreSQL FETCH](https://www.pgtutorial.com/postgresql-tutorial/postgresql-fetch/)
 22. [PostgreSQL IS NULL Operator](https://www.pgtutorial.com/postgresql-tutorial/postgresql-is-null/)
+
+## Section 5: Joining Tables
+
+23. [PostgreSQL Inner Join](https://www.pgtutorial.com/postgresql-tutorial/postgresql-inner-join/)
+24. [PostgreSQL Left Join](https://www.pgtutorial.com/postgresql-tutorial/postgresql-left-join/)
+25. [PostgreSQL Right Join](https://www.pgtutorial.com/postgresql-tutorial/postgresql-right-join/)
+26. [PostgreSQL Self-join](https://www.pgtutorial.com/postgresql-tutorial/postgresql-self-join/)
+
+## Section 6: Grouping Rows
+
+27. [GROUP BY](https://www.pgtutorial.com/postgresql-tutorial/postgresql-group-by/)
+28. [HAVING](https://www.pgtutorial.com/postgresql-tutorial/postgresql-having/)
+29. [GROUPING SETS](https://www.pgtutorial.com/postgresql-tutorial/postgresql-grouping-sets/)
+30. [ROLLUP](https://www.pgtutorial.com/postgresql-tutorial/postgresql-rollup/)
+31. [CUBE](https://www.pgtutorial.com/postgresql-tutorial/postgresql-cube/)
