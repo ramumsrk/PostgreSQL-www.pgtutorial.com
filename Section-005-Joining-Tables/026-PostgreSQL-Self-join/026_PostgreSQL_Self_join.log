@@ -1,0 +1,214 @@
+********* QUERY **********
+SELECT
+CURRENT_DATABASE() AS "Current database",
+CURRENT_USER,
+CURRENT_ROLE,
+CURRENT_SCHEMA,
+CURRENT_TIMESTAMP,
+CURRENT_DATE
+**************************
+
+ Current database | current_user | current_role | current_schema |        current_timestamp         | current_date 
+------------------+--------------+--------------+----------------+----------------------------------+--------------
+ pgtutorial       | pgtutorial   | pgtutorial   | pgtutorial     | 2025-03-11 19:21:40.212732+05:30 | 2025-03-11
+(1 row)
+
+********* QUERY **********
+CREATE TABLE IF NOT EXISTS categories
+(
+    -- Column constraint
+    category_id INTEGER GENERATED ALWAYS AS IDENTITY CONSTRAINT pk_categories_category_id PRIMARY KEY,
+    category_name VARCHAR(255) NOT NULL,
+    parent_id INTEGER CONSTRAINT fk_categories_parent_id REFERENCES categories (category_id) ON DELETE CASCADE
+)
+**************************
+
+CREATE TABLE
+********* QUERY **********
+INSERT INTO categories
+(category_id, category_name, parent_id)
+VALUES
+(1, 'Electronics', NULL),
+(2, 'Mobile Devices', 1),
+(3, 'Smartphones', 2),
+(4, 'Tablets', 2),
+(5, 'Accessories', 2),
+(6, 'Wearables', 2),
+(7, 'Home Entertainment', 1),
+(8, 'Televisions', 7),
+(9, 'Audio Systems', 7),
+(10, 'Computers', 1),
+(11, 'Laptops', 10),
+(12, 'Desktops', 10)
+RETURNING category_id, category_name, parent_id
+**************************
+
+********* QUERY **********
+INSERT INTO categories
+(category_id, category_name, parent_id)
+OVERRIDING SYSTEM VALUE
+VALUES
+(1, 'Electronics', NULL),
+(2, 'Mobile Devices', 1),
+(3, 'Smartphones', 2),
+(4, 'Tablets', 2),
+(5, 'Accessories', 2),
+(6, 'Wearables', 2),
+(7, 'Home Entertainment', 1),
+(8, 'Televisions', 7),
+(9, 'Audio Systems', 7),
+(10, 'Computers', 1),
+(11, 'Laptops', 10),
+(12, 'Desktops', 10)
+RETURNING category_id, category_name, parent_id
+**************************
+
+ category_id |   category_name    | parent_id 
+-------------+--------------------+-----------
+           1 | Electronics        |          
+           2 | Mobile Devices     |         1
+           3 | Smartphones        |         2
+           4 | Tablets            |         2
+           5 | Accessories        |         2
+           6 | Wearables          |         2
+           7 | Home Entertainment |         1
+           8 | Televisions        |         7
+           9 | Audio Systems      |         7
+          10 | Computers          |         1
+          11 | Laptops            |        10
+          12 | Desktops           |        10
+(12 rows)
+
+INSERT 0 12
+********* QUERY **********
+SELECT
+child.category_name,
+parent.category_name
+FROM
+categories child
+INNER JOIN categories parent
+ON (parent.parent_id = child.category_id)
+**************************
+
+   category_name    |   category_name    
+--------------------+--------------------
+ Electronics        | Mobile Devices
+ Mobile Devices     | Smartphones
+ Mobile Devices     | Tablets
+ Mobile Devices     | Accessories
+ Mobile Devices     | Wearables
+ Electronics        | Home Entertainment
+ Home Entertainment | Televisions
+ Home Entertainment | Audio Systems
+ Electronics        | Computers
+ Computers          | Laptops
+ Computers          | Desktops
+(11 rows)
+
+********* QUERY **********
+SELECT
+parent.category_name AS "Parent category name",
+child.category_name AS "Child category name"
+FROM
+categories child
+INNER JOIN categories parent
+ON (parent.parent_id = child.category_id)
+**************************
+
+ Parent category name | Child category name 
+----------------------+---------------------
+ Mobile Devices       | Electronics
+ Smartphones          | Mobile Devices
+ Tablets              | Mobile Devices
+ Accessories          | Mobile Devices
+ Wearables            | Mobile Devices
+ Home Entertainment   | Electronics
+ Televisions          | Home Entertainment
+ Audio Systems        | Home Entertainment
+ Computers            | Electronics
+ Laptops              | Computers
+ Desktops             | Computers
+(11 rows)
+
+********* QUERY **********
+SELECT
+parent.category_name AS "Parent category name",
+child.category_name AS "Child category name"
+FROM
+categories child
+INNER JOIN categories parent
+ON (child.parent_id = parent.category_id)
+**************************
+
+ Parent category name | Child category name 
+----------------------+---------------------
+ Electronics          | Mobile Devices
+ Mobile Devices       | Smartphones
+ Mobile Devices       | Tablets
+ Mobile Devices       | Accessories
+ Mobile Devices       | Wearables
+ Electronics          | Home Entertainment
+ Home Entertainment   | Televisions
+ Home Entertainment   | Audio Systems
+ Electronics          | Computers
+ Computers            | Laptops
+ Computers            | Desktops
+(11 rows)
+
+********* QUERY **********
+SELECT
+parent.category_name AS "Parent category name",
+child.category_name AS "Child category name"
+FROM categories parent
+LEFT OUTER JOIN categories child
+ON parent.category_id = child.parent_id
+**************************
+
+ Parent category name | Child category name 
+----------------------+---------------------
+ Electronics          | Mobile Devices
+ Mobile Devices       | Smartphones
+ Mobile Devices       | Tablets
+ Mobile Devices       | Accessories
+ Mobile Devices       | Wearables
+ Electronics          | Home Entertainment
+ Home Entertainment   | Televisions
+ Home Entertainment   | Audio Systems
+ Electronics          | Computers
+ Computers            | Laptops
+ Computers            | Desktops
+ Laptops              | 
+ Desktops             | 
+ Accessories          | 
+ Televisions          | 
+ Wearables            | 
+ Tablets              | 
+ Smartphones          | 
+ Audio Systems        | 
+(19 rows)
+
+********* QUERY **********
+SELECT
+parent.category_name AS "Parent category name",
+child.category_name AS "Child category name"
+FROM categories parent
+LEFT OUTER JOIN categories child
+ON parent.parent_id = child.category_id
+**************************
+
+ Parent category name | Child category name 
+----------------------+---------------------
+ Electronics          | 
+ Mobile Devices       | Electronics
+ Smartphones          | Mobile Devices
+ Tablets              | Mobile Devices
+ Accessories          | Mobile Devices
+ Wearables            | Mobile Devices
+ Home Entertainment   | Electronics
+ Televisions          | Home Entertainment
+ Audio Systems        | Home Entertainment
+ Computers            | Electronics
+ Laptops              | Computers
+ Desktops             | Computers
+(12 rows)
+

@@ -1,0 +1,32 @@
+-[ RECORD 1 ]-----+---------------------------------
+Current database  | pgtutorial
+current_user      | pgtutorial
+current_role      | pgtutorial
+current_schema    | pgtutorial
+current_timestamp | 2025-03-10 19:43:36.372124+05:30
+
+-[ RECORD 1 ]-+-----------------
+product_id    | 1
+product_name  | iPhone 14 Pro
+product_price | 999.99
+brand_id      | 1
+brand_name    | Apple
+-[ RECORD 2 ]-+-----------------
+product_id    | 2
+product_name  | iPhone 15 Pro
+product_price | 1199.99
+brand_id      | 1
+brand_name    | Apple
+-[ RECORD 3 ]-+-----------------
+product_id    | 3
+product_name  | Galaxy S23 Ultra
+product_price | 1149.47
+brand_id      | 2
+brand_name    | Samsung
+-[ RECORD 4 ]-+-----------------
+product_id    | 4
+product_name  | Oppo Find Flip
+product_price | 499.99
+brand_id      | NULL
+brand_name    | NULL
+

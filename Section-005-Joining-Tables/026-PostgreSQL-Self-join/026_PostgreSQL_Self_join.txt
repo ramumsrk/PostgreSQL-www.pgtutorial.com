@@ -1,0 +1,256 @@
+-[ RECORD 1 ]-----+---------------------------------
+Current database  | pgtutorial
+current_user      | pgtutorial
+current_role      | pgtutorial
+current_schema    | pgtutorial
+current_timestamp | 2025-03-11 19:21:40.212732+05:30
+current_date      | 2025-03-11
+
+CREATE TABLE
+-[ RECORD 1 ]-+-------------------
+category_id   | 1
+category_name | Electronics
+parent_id     | 
+-[ RECORD 2 ]-+-------------------
+category_id   | 2
+category_name | Mobile Devices
+parent_id     | 1
+-[ RECORD 3 ]-+-------------------
+category_id   | 3
+category_name | Smartphones
+parent_id     | 2
+-[ RECORD 4 ]-+-------------------
+category_id   | 4
+category_name | Tablets
+parent_id     | 2
+-[ RECORD 5 ]-+-------------------
+category_id   | 5
+category_name | Accessories
+parent_id     | 2
+-[ RECORD 6 ]-+-------------------
+category_id   | 6
+category_name | Wearables
+parent_id     | 2
+-[ RECORD 7 ]-+-------------------
+category_id   | 7
+category_name | Home Entertainment
+parent_id     | 1
+-[ RECORD 8 ]-+-------------------
+category_id   | 8
+category_name | Televisions
+parent_id     | 7
+-[ RECORD 9 ]-+-------------------
+category_id   | 9
+category_name | Audio Systems
+parent_id     | 7
+-[ RECORD 10 ]+-------------------
+category_id   | 10
+category_name | Computers
+parent_id     | 1
+-[ RECORD 11 ]+-------------------
+category_id   | 11
+category_name | Laptops
+parent_id     | 10
+-[ RECORD 12 ]+-------------------
+category_id   | 12
+category_name | Desktops
+parent_id     | 10
+
+INSERT 0 12
+-[ RECORD 1 ]-+-------------------
+category_name | Electronics
+category_name | Mobile Devices
+-[ RECORD 2 ]-+-------------------
+category_name | Mobile Devices
+category_name | Smartphones
+-[ RECORD 3 ]-+-------------------
+category_name | Mobile Devices
+category_name | Tablets
+-[ RECORD 4 ]-+-------------------
+category_name | Mobile Devices
+category_name | Accessories
+-[ RECORD 5 ]-+-------------------
+category_name | Mobile Devices
+category_name | Wearables
+-[ RECORD 6 ]-+-------------------
+category_name | Electronics
+category_name | Home Entertainment
+-[ RECORD 7 ]-+-------------------
+category_name | Home Entertainment
+category_name | Televisions
+-[ RECORD 8 ]-+-------------------
+category_name | Home Entertainment
+category_name | Audio Systems
+-[ RECORD 9 ]-+-------------------
+category_name | Electronics
+category_name | Computers
+-[ RECORD 10 ]+-------------------
+category_name | Computers
+category_name | Laptops
+-[ RECORD 11 ]+-------------------
+category_name | Computers
+category_name | Desktops
+
+-[ RECORD 1 ]--------+-------------------
+Parent category name | Mobile Devices
+Child category name  | Electronics
+-[ RECORD 2 ]--------+-------------------
+Parent category name | Smartphones
+Child category name  | Mobile Devices
+-[ RECORD 3 ]--------+-------------------
+Parent category name | Tablets
+Child category name  | Mobile Devices
+-[ RECORD 4 ]--------+-------------------
+Parent category name | Accessories
+Child category name  | Mobile Devices
+-[ RECORD 5 ]--------+-------------------
+Parent category name | Wearables
+Child category name  | Mobile Devices
+-[ RECORD 6 ]--------+-------------------
+Parent category name | Home Entertainment
+Child category name  | Electronics
+-[ RECORD 7 ]--------+-------------------
+Parent category name | Televisions
+Child category name  | Home Entertainment
+-[ RECORD 8 ]--------+-------------------
+Parent category name | Audio Systems
+Child category name  | Home Entertainment
+-[ RECORD 9 ]--------+-------------------
+Parent category name | Computers
+Child category name  | Electronics
+-[ RECORD 10 ]-------+-------------------
+Parent category name | Laptops
+Child category name  | Computers
+-[ RECORD 11 ]-------+-------------------
+Parent category name | Desktops
+Child category name  | Computers
+
+-[ RECORD 1 ]--------+-------------------
+Parent category name | Electronics
+Child category name  | Mobile Devices
+-[ RECORD 2 ]--------+-------------------
+Parent category name | Mobile Devices
+Child category name  | Smartphones
+-[ RECORD 3 ]--------+-------------------
+Parent category name | Mobile Devices
+Child category name  | Tablets
+-[ RECORD 4 ]--------+-------------------
+Parent category name | Mobile Devices
+Child category name  | Accessories
+-[ RECORD 5 ]--------+-------------------
+Parent category name | Mobile Devices
+Child category name  | Wearables
+-[ RECORD 6 ]--------+-------------------
+Parent category name | Electronics
+Child category name  | Home Entertainment
+-[ RECORD 7 ]--------+-------------------
+Parent category name | Home Entertainment
+Child category name  | Televisions
+-[ RECORD 8 ]--------+-------------------
+Parent category name | Home Entertainment
+Child category name  | Audio Systems
+-[ RECORD 9 ]--------+-------------------
+Parent category name | Electronics
+Child category name  | Computers
+-[ RECORD 10 ]-------+-------------------
+Parent category name | Computers
+Child category name  | Laptops
+-[ RECORD 11 ]-------+-------------------
+Parent category name | Computers
+Child category name  | Desktops
+
+-[ RECORD 1 ]--------+-------------------
+Parent category name | Electronics
+Child category name  | Mobile Devices
+-[ RECORD 2 ]--------+-------------------
+Parent category name | Mobile Devices
+Child category name  | Smartphones
+-[ RECORD 3 ]--------+-------------------
+Parent category name | Mobile Devices
+Child category name  | Tablets
+-[ RECORD 4 ]--------+-------------------
+Parent category name | Mobile Devices
+Child category name  | Accessories
+-[ RECORD 5 ]--------+-------------------
+Parent category name | Mobile Devices
+Child category name  | Wearables
+-[ RECORD 6 ]--------+-------------------
+Parent category name | Electronics
+Child category name  | Home Entertainment
+-[ RECORD 7 ]--------+-------------------
+Parent category name | Home Entertainment
+Child category name  | Televisions
+-[ RECORD 8 ]--------+-------------------
+Parent category name | Home Entertainment
+Child category name  | Audio Systems
+-[ RECORD 9 ]--------+-------------------
+Parent category name | Electronics
+Child category name  | Computers
+-[ RECORD 10 ]-------+-------------------
+Parent category name | Computers
+Child category name  | Laptops
+-[ RECORD 11 ]-------+-------------------
+Parent category name | Computers
+Child category name  | Desktops
+-[ RECORD 12 ]-------+-------------------
+Parent category name | Laptops
+Child category name  | 
+-[ RECORD 13 ]-------+-------------------
+Parent category name | Desktops
+Child category name  | 
+-[ RECORD 14 ]-------+-------------------
+Parent category name | Accessories
+Child category name  | 
+-[ RECORD 15 ]-------+-------------------
+Parent category name | Televisions
+Child category name  | 
+-[ RECORD 16 ]-------+-------------------
+Parent category name | Wearables
+Child category name  | 
+-[ RECORD 17 ]-------+-------------------
+Parent category name | Tablets
+Child category name  | 
+-[ RECORD 18 ]-------+-------------------
+Parent category name | Smartphones
+Child category name  | 
+-[ RECORD 19 ]-------+-------------------
+Parent category name | Audio Systems
+Child category name  | 
+
+-[ RECORD 1 ]--------+-------------------
+Parent category name | Electronics
+Child category name  | 
+-[ RECORD 2 ]--------+-------------------
+Parent category name | Mobile Devices
+Child category name  | Electronics
+-[ RECORD 3 ]--------+-------------------
+Parent category name | Smartphones
+Child category name  | Mobile Devices
+-[ RECORD 4 ]--------+-------------------
+Parent category name | Tablets
+Child category name  | Mobile Devices
+-[ RECORD 5 ]--------+-------------------
+Parent category name | Accessories
+Child category name  | Mobile Devices
+-[ RECORD 6 ]--------+-------------------
+Parent category name | Wearables
+Child category name  | Mobile Devices
+-[ RECORD 7 ]--------+-------------------
+Parent category name | Home Entertainment
+Child category name  | Electronics
+-[ RECORD 8 ]--------+-------------------
+Parent category name | Televisions
+Child category name  | Home Entertainment
+-[ RECORD 9 ]--------+-------------------
+Parent category name | Audio Systems
+Child category name  | Home Entertainment
+-[ RECORD 10 ]-------+-------------------
+Parent category name | Computers
+Child category name  | Electronics
+-[ RECORD 11 ]-------+-------------------
+Parent category name | Laptops
+Child category name  | Computers
+-[ RECORD 12 ]-------+-------------------
+Parent category name | Desktops
+Child category name  | Computers
+
