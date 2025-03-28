@@ -1,0 +1,5 @@
+CREATE ROLE www_pgtutorial_com
+WITH
+CREATEDB
+LOGIN
+NOSUPERUSER\g

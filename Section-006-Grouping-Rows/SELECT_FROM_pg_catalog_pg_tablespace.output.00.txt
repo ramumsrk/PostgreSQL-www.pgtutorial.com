@@ -1,0 +1,7 @@
+-[ RECORD 1 ]------------------
+oid        | 16389
+spcname    | www_pgtutorial_com
+spcowner   | 16388
+spcacl     | NULL
+spcoptions | NULL
+

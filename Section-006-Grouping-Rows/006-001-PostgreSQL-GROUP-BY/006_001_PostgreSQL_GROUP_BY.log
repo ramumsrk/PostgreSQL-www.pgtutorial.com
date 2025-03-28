@@ -1,0 +1,28 @@
+/******** QUERY *********/
+SELECT
+CURRENT_DATABASE() AS "Current database",
+CURRENT_USER,
+CURRENT_ROLE,
+CURRENT_SCHEMA,
+CURRENT_DATE,
+CURRENT_TIMESTAMP
+/************************/
+
+  Current database  |    current_user    |    current_role    |   current_schema   | current_date |        current_timestamp         
+--------------------+--------------------+--------------------+--------------------+--------------+----------------------------------
+ www_pgtutorial_com | www_pgtutorial_com | www_pgtutorial_com | www_pgtutorial_com | 2025-03-21   | 2025-03-21 23:11:13.649308+05:30
+(1 row)
+
+/******** QUERY *********/
+SELECT
+warehouse_id
+FROM www_pgtutorial_com.inventories
+GROUP BY warehouse_id
+/************************/
+
+ warehouse_id 
+--------------
+            2
+            1
+(2 rows)
+

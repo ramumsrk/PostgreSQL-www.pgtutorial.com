@@ -1,0 +1,10 @@
+/******** QUERY *********/
+BEGIN
+/************************/
+
+/******** QUERY *********/
+CREATE TABLESPACE www_pgtutorial_com
+OWNER 'www_pgtutorial_com'
+LOCATION '/opt/PostgreSQL/V17.2/data/www_pgtutorial_com/'
+/************************/
+

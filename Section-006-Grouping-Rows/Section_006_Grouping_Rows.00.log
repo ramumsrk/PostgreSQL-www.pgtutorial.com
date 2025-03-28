@@ -1,0 +1,4 @@
+/******** QUERY *********/
+SELECT VARSION() AS "PostgreSQL server version"
+/************************/
+

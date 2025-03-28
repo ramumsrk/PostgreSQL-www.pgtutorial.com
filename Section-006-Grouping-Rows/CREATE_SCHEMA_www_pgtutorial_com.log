@@ -1,0 +1,9 @@
+/******** QUERY *********/
+BEGIN
+/************************/
+
+/******** QUERY *********/
+CREATE SCHEMA IF NOT EXISTS www_pgtutorial_com AUTHORIZATION www_pgtutorial_com
+/************************/
+
+CREATE SCHEMA

@@ -1,0 +1,17 @@
+/******** QUERY *********/
+BEGIN
+/************************/
+
+/******** QUERY *********/
+CREATE TABLE IF NOT EXISTS www_pgtutorial_com.inventories
+(
+    inventory_id INTEGER GENERATED ALWAYS AS IDENTITY CONSTRAINT pk_inventories_inventory_id PRIMARY KEY,
+    product_name CHARACTER VARYING(30) DEFAULT NULL,
+    quantity INTEGER DEFAULT NULL,
+    warehouse_id INT DEFAULT NULL,
+    brand_id INTEGER DEFAULT NULL
+)
+TABLESPACE www_pgtutorial_com
+/************************/
+
+CREATE TABLE

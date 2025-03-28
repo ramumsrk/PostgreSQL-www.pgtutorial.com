@@ -1,0 +1,13 @@
+-[ RECORD 1 ]-----+---------------------------------
+Current database  | www_pgtutorial_com
+current_user      | www_pgtutorial_com
+current_role      | www_pgtutorial_com
+current_schema    | www_pgtutorial_com
+current_date      | 2025-03-21
+current_timestamp | 2025-03-21 23:11:13.649308+05:30
+
+-[ RECORD 1 ]+--
+warehouse_id | 2
+-[ RECORD 2 ]+--
+warehouse_id | 1
+

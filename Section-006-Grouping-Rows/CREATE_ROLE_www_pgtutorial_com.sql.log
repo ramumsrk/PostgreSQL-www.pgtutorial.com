@@ -1,0 +1,17 @@
+/******** QUERY *********/
+BEGIN
+/************************/
+
+/******** QUERY *********/
+CREATE ROLE www_pgtutorial_com
+WITH
+CREATEDB
+LOGIN
+NOSUPERUSER
+CONNECTIONS LIMIT = -1
+/************************/
+
+/******** QUERY *********/
+COMMIT
+/************************/
+

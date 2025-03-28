@@ -1,0 +1,13 @@
+/******** QUERY *********/
+BEGIN
+/************************/
+
+/******** QUERY *********/
+SELECT * FROM pg_catalog.pg_tablespace WHERE spcname = 'www_pgtutorial_com'
+/************************/
+
+  oid  |      spcname       | spcowner | spcacl | spcoptions 
+-------+--------------------+----------+--------+------------
+ 16389 | www_pgtutorial_com |    16388 | NULL   | NULL
+(1 row)
+
